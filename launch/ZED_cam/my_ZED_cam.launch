@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <include ns="camera" file="$(find zed_wrapper)/launch/zed_camera.launch" >
+        <!-- publish odometry frame -->
+       <arg name="publish_tf"            value="false" /> 
+    </include>
+</launch>
