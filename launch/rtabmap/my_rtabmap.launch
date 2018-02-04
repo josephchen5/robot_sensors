@@ -20,7 +20,7 @@
        <arg name="subscribe_scan"          default="false"/>
        <arg name="scan_topic"              default="/scan"/>
        <arg name="rtabmap_approx_sync"     value="true"/>
-       <arg name="Grid_FromDepth"          value="true"/>
+       <arg name="Grid_FromDepth"          default="true"/>
        <!--param name="Grid/FromDepth" type="string" value="false"/-->
 
     <!-- A) With rtabmap odometry --> 
