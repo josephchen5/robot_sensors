@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<launch>
+    <!--include file="$(find rtabmap_ros)/launch/rtabmap.launch" -->
+    <include file="$(find robot_sensors)/launch/rtabmap/rtabmap.launch" >
+      <arg name="rtabmap_args"            value="--delete_db_on_start" /> 
+    <!--arg name="frame_id"                value="zed_center" /-->
+       <arg name="frame_id"                value="base_link" />  
+
+       <!--arg name="odom_frame_id"           value="odom" /-->  
+    <!-- RGB-D related topics -->
+       <arg name="rgb_topic"               default="/camera/rgb/image_rect_color" />
+       <arg name="depth_topic"             default="/camera/depth/depth_registered" />
+       <arg name="camera_info_topic"       default="/camera/rgb/camera_info" />
+
+       <!--arg name="approx_sync"             value="false"/-->
+       <arg name="approx_sync"             value="true"/>
+
+    <!-- scan related topics -->
+
+       <arg name="subscribe_scan"          default="false"/>
+       <arg name="scan_topic"              default="/scan"/>
+       <arg name="rtabmap_approx_sync"     value="true"/>
+       <arg name="Grid_FromDepth"          value="true"/>
+       <!--param name="Grid/FromDepth" type="string" value="false"/-->
+
+    <!-- A) With rtabmap odometry --> 
+       <!--arg name="visual_odometry"          default="true"/-->          <!-- Launch rtabmap visual odometry node -->
+
+
+    <!-- B) With zed odometry --> 
+       <arg name="visual_odometry"          default="false"/>
+       <arg name="odom_topic"               default="/camera/odom"/>  
+
+
+    <!-- C) With EKF odometry --> 
+       <!--arg name="odom_topic"               default="/odometry/filtered"/-->  <!-- Odometry topic used if visual_odometry is false -->
+
+
+       <!-- Choose visualization -->
+       <arg name="rtabmapviz"              default="false" /> 
+       <!--arg name="rviz"                    default="true" /-->
+       <arg name="rviz"                    default="true" />
+    </include>
+</launch>
