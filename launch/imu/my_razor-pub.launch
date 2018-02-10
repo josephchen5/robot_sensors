@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="razor_config_file" default="$(find robot_sensors)/config/my_razor_SEN_14001.yaml"/>
-
+  <!--arg name="razor_config_file" default="$(find robot_sensors)/config/razor_imu/my_razor_SEN_14001.yaml"/-->
+  <arg name="razor_config_file" default="$(find robot_sensors)/config/razor_imu/my_razor_SEN_10736.yaml"/>
     <!--node pkg="tf2_ros" type="static_transform_publisher" name="bl_imu" args="0 0 0 0 0 0 base_link base_imu_link" /-->
 
 
