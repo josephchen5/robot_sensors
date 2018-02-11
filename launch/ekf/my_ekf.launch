@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+  <rosparam command="load" file="$(find robot_sensors)/ekf_params/my_ekf_wheel_vo.yaml" />    <!-- wheel odom and vo fuse ok -->
+  <!--rosparam command="load" file="$(find robot_sensors)/ekf_params/my_ekf_wheel_imu.yaml" /-->
+  <!--rosparam command="load" file="$(find robot_sensors)/ekf_params/my_ekf_vo_imu.yaml" /-->
+  <!--rosparam command="load" file="$(find robot_sensors)/ekf_params/my_ekf_vo_imu_gps.yaml" /-->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se_odom" clear_params="true" output="screen">
+</node>
+
+
+  <!--node pkg="robot_localization" type="ekf_localization_node" name="ekf_se_map" clear_params="true">
+    <remap from="odometry/filtered" to="odometry/filtered_map"/>
+  </node-->
+
+
+  <!--node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform" clear_params="true">
+    <remap from="odometry/filtered" to="odometry/filtered_map"/>
+  </node-->
+
+
+
+</launch>
