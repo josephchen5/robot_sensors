@@ -15,5 +15,8 @@
         respawn_delay="$(arg respawn_delay)">
     <rosparam command="load" 
               file="$(find robot_sensors)/config/ublox_gps/$(arg param_file_name).yaml" />
+
+    <remap from="/c94_m8p_rover/fix"      to="/gps/fix"/>
+
   </node>
 </launch>

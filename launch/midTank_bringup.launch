@@ -1,25 +1,36 @@
 <?xml version="1.0"?>
 <launch>
+  <arg name="ZED_publish_tf"            default="true" />
+  <arg name="use_rviz"                  default="false" />
+    <!--arg name="use_rviz" default="true" /-->
 
-    <!--arg name="use_rviz" default="false" /-->
-    <arg name="use_rviz" default="true" />
 
     <!-- TF setting -->
-    <include file="$(find robot_sensors)/include/midtank_tf.launch.xml" />
+    <!--include file="$(find robot_sensors)/include/midtank_tf.launch.xml" /-->
+    <include file="$(find robot_sensors)/include/midtank_tf2.launch.xml" />
 
-
-    <!-- SENSOR DEVICE -->
+                          <!-- SENSOR DEVICE -->
     <!-- IMU -->
     <include file="$(find robot_sensors)/launch/imu/my_razor-pub.launch" />
+
     <!-- Arduino  wheel odometry  and motor drive -->
     <include file="$(find robot_sensors)/launch/base_link/my_midTank_arduino_NO_tf.launch" />
+
     <!-- ZED -->
-    <include file="$(find robot_sensors)/launch/ZED_cam/my_ZED_cam.launch" />
+
+    <include file="$(find robot_sensors)/launch/ZED_cam/my_ZED_cam.launch" >
+       <arg name="ZED_publish_tf"            value="$(arg ZED_publish_tf)" />
+    </include>
+
     <!-- ydlidar -->
     <include file="$(find robot_sensors)/launch/ydlidar/lidar.launch" />
 
+    <!-- GPS -->
+    <include file="$(find robot_sensors)/launch/ublox_gps/ublox_device_rover.launch" />
+
+
     <!-- EKF -->
-    <include file="$(find robot_sensors)/launch/ekf/my_ekf_wheel_imu.launch" />
+    <!--include file="$(find robot_sensors)/launch/ekf/my_ekf_wheel_imu.launch" /-->
 
 
 

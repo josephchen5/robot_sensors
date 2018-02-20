@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 435
@@ -58,10 +59,14 @@ Visualization Manager:
           Value: false
         base_link:
           Value: true
+        gps:
+          Value: false
+        laser:
+          Value: false
         odom:
           Value: true
         zed_center:
-          Value: true
+          Value: false
         zed_depth_camera:
           Value: false
         zed_left_camera:
@@ -76,6 +81,10 @@ Visualization Manager:
       Tree:
         base_link:
           base_imu_link:
+            {}
+          gps:
+            {}
+          laser:
             {}
           zed_center:
             zed_left_camera:
@@ -142,7 +151,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 5.19223928
+      Distance: 4.88631105
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -157,10 +166,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.544797719
+      Pitch: 1.064798
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.77857256
+      Yaw: 5.89175892
     Saved: ~
 Window Geometry:
   Displays:
@@ -178,5 +187,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1200
-  X: 75
+  X: 341
   Y: 24
