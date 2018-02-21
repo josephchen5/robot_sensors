@@ -272,33 +272,34 @@ boolean output_errors = false;  // true or false
 // For the M0, only the extended magnetometer calibration seems to be really necessary if DEBUG__USE_DMP_M0 is set to true...
 // Accelerometer
 // "accel x,y,z (min/max) = X_MIN/X_MAX  Y_MIN/Y_MAX  Z_MIN/Z_MAX"
-float ACCEL_X_MIN = -291.00;
-float ACCEL_X_MAX = 280.00;
-float ACCEL_Y_MIN = -260.00;
-float ACCEL_Y_MAX = 296.00;
-float ACCEL_Z_MIN = -322.00;
-float ACCEL_Z_MAX = 241.00;
+float ACCEL_X_MIN = -275.00;
+float ACCEL_X_MAX = 264.00;
+float ACCEL_Y_MIN = -258.00;
+float ACCEL_Y_MAX = 281.00;
+float ACCEL_Z_MIN = -315.00;
+float ACCEL_Z_MAX = 234.00;
 
 // Magnetometer (standard calibration mode)
 // "magn x,y,z (min/max) = X_MIN/X_MAX  Y_MIN/Y_MAX  Z_MIN/Z_MAX"
-float MAGN_X_MIN = -731.00;
-float MAGN_X_MAX = 844.00;
-float MAGN_Y_MIN = -771.52;
-float MAGN_Y_MAX = 825.00;
-float MAGN_Z_MIN = -764.00;
-float MAGN_Z_MAX = 755.00;
+float MAGN_X_MIN = -453.00;
+float MAGN_X_MAX = 589.00;
+float MAGN_Y_MIN = -530.00;
+float MAGN_Y_MAX = 562.00;
+float MAGN_Z_MIN = -491.00;
+float MAGN_Z_MAX = 504.00;
 
 // Magnetometer (extended calibration mode)
 // Set to true to use extended magnetometer calibration (compensates hard & soft iron errors)
 boolean CALIBRATION__MAGN_USE_EXTENDED = true;
-float magn_ellipsoid_center[3] = {93.7352, 19.6168, -8.21720};
-float magn_ellipsoid_transform[3][3] = {{0.913161, 0.0116277, 0.00383255}, {0.0116277, 0.924952, 0.0218212}, {0.00383255, 0.0218212, 0.993043}};
+float magn_ellipsoid_center[3] = {84.4557, 12.6689, -1.23583};
+float magn_ellipsoid_transform[3][3] = {{0.919921, 0.00784221, 0.00630756}, {0.00784221, 0.919412, 0.0183434}, {0.00630756, 0.0183434, 0.994999}};
+
 
 // Gyroscope
 // "gyro x,y,z (current/average) = .../OFFSET_X  .../OFFSET_Y  .../OFFSET_Z
-float GYRO_AVERAGE_OFFSET_X = 41.85;
-float GYRO_AVERAGE_OFFSET_Y = 56.59;
-float GYRO_AVERAGE_OFFSET_Z = -3.55;
+float GYRO_AVERAGE_OFFSET_X = 42.65;
+float GYRO_AVERAGE_OFFSET_Y = 59.44;
+float GYRO_AVERAGE_OFFSET_Z = -4.43;
 
 /*
 // Calibration example:
