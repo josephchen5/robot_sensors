@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="razor_config_file" default="$(find robot_sensors)/config/my_razor.yaml"/>
+
+  <arg name="razor_SEN"        default="10736"/>   
+  <arg name="razor_config_file" default="$(find robot_sensors)/config/razor_imu/my_razor_SEN_$(arg razor_SEN).yaml"/>
+
   <node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" output="screen">
     <rosparam file="$(arg razor_config_file)" command="load"/>
   </node>
