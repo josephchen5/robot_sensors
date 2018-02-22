@@ -273,20 +273,20 @@ boolean output_errors = false;  // true or false
 // Accelerometer
 // "accel x,y,z (min/max) = X_MIN/X_MAX  Y_MIN/Y_MAX  Z_MIN/Z_MAX"
 float ACCEL_X_MIN = -275.00;
-float ACCEL_X_MAX = 264.00;
-float ACCEL_Y_MIN = -258.00;
-float ACCEL_Y_MAX = 281.00;
-float ACCEL_Z_MIN = -315.00;
-float ACCEL_Z_MAX = 234.00;
+float ACCEL_X_MAX = 286.00;
+float ACCEL_Y_MIN = -272.00;
+float ACCEL_Y_MAX = 292.00;
+float ACCEL_Z_MIN = -327.00;
+float ACCEL_Z_MAX = 236.00;
 
 // Magnetometer (standard calibration mode)
 // "magn x,y,z (min/max) = X_MIN/X_MAX  Y_MIN/Y_MAX  Z_MIN/Z_MAX"
-float MAGN_X_MIN = -453.00;
-float MAGN_X_MAX = 589.00;
-float MAGN_Y_MIN = -530.00;
-float MAGN_Y_MAX = 562.00;
-float MAGN_Z_MIN = -491.00;
-float MAGN_Z_MAX = 504.00;
+float MAGN_X_MIN = -343.00;
+float MAGN_X_MAX = 495.00;
+float MAGN_Y_MIN = -366.00;
+float MAGN_Y_MAX = 354.00;
+float MAGN_Z_MIN = -359.00;
+float MAGN_Z_MAX = 326.00;
 
 // Magnetometer (extended calibration mode)
 // Set to true to use extended magnetometer calibration (compensates hard & soft iron errors)
@@ -297,9 +297,9 @@ float magn_ellipsoid_transform[3][3] = {{0.919921, 0.00784221, 0.00630756}, {0.0
 
 // Gyroscope
 // "gyro x,y,z (current/average) = .../OFFSET_X  .../OFFSET_Y  .../OFFSET_Z
-float GYRO_AVERAGE_OFFSET_X = 42.65;
-float GYRO_AVERAGE_OFFSET_Y = 59.44;
-float GYRO_AVERAGE_OFFSET_Z = -4.43;
+float GYRO_AVERAGE_OFFSET_X = 41.64;
+float GYRO_AVERAGE_OFFSET_Y = 59.69;
+float GYRO_AVERAGE_OFFSET_Z = -4.69;
 
 /*
 // Calibration example:
