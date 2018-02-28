@@ -294,10 +294,6 @@ boolean CALIBRATION__MAGN_USE_EXTENDED = true;
 float magn_ellipsoid_center[3] = {513.782, 269.968, 161.067};
 float magn_ellipsoid_transform[3][3] = {{0.997789, 0.0123592, 0.00370180}, {0.0123592, 0.925678, -0.00211151}, {0.00370180, -0.00211151, 0.927815}};
 
-boolean CALIBRATION__MAGN_USE_EXTENDED = true;
-float magn_ellipsoid_center[3] = {513.782, 269.968, 161.067};
-float magn_ellipsoid_transform[3][3] = {{0.997789, 0.0123592, 0.00370180}, {0.0123592, 0.925678, -0.00211151}, {0.00370180, -0.00211151, 0.927815}};
-
 // Gyroscope
 // "gyro x,y,z (current/average) = .../OFFSET_X  .../OFFSET_Y  .../OFFSET_Z
 float GYRO_AVERAGE_OFFSET_X = 0.0;

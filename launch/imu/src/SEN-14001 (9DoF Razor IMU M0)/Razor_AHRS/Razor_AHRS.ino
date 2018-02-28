@@ -296,9 +296,9 @@ float magn_ellipsoid_transform[3][3] = {{0.997789, 0.0123592, 0.00370180}, {0.01
 
 // Gyroscope
 // "gyro x,y,z (current/average) = .../OFFSET_X  .../OFFSET_Y  .../OFFSET_Z
-float GYRO_AVERAGE_OFFSET_X = 0.0;
-float GYRO_AVERAGE_OFFSET_Y = 0.0;
-float GYRO_AVERAGE_OFFSET_Z = 0.0;
+float GYRO_AVERAGE_OFFSET_X = 0.02;
+float GYRO_AVERAGE_OFFSET_Y = -0.03;
+float GYRO_AVERAGE_OFFSET_Z = 0.02;
 
 /*
 // Calibration example:
