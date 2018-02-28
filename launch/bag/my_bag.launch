@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="use_bag"        default="true" />
+
+      <!--arg name="bag_file"       default="$(find robot_sensors)/bag/2018-02-25-21-50-20.bag "/--> 
+    <arg name="bag_file"       default="/media/nvidia/D5F2-E89E/2018-02-25-21-50-20.bag --clock"/>
+    <arg name="publish_urdf"          default="true" />
+
+    <param name="use_sim_time" value="true" />
+
+    <!-- bag file -->
+
+    <node pkg="rosbag" type="play" name="player" output="screen" args="$(arg bag_file)" if="$(arg use_bag)"/>
+
+
+    <!-- TF setting -->
+    <!--include file="$(find robot_sensors)/include/midtank_tf.launch.xml" /-->
+    <include file="$(find robot_sensors)/include/midtank_tf2.launch.xml" />
+
+    <!-- ROS URDF description of the ZED -->
+    <group if="$(arg publish_urdf)">
+        <param name="zed_description" textfile="$(find zed_wrapper)/urdf/zed.urdf" />
+        <node name="zed_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+            <remap from="robot_description" to="zed_description" />
+        </node>
+    </group>
+
+
+
+</launch>

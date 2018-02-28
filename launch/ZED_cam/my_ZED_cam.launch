@@ -8,5 +8,7 @@
        <arg name="base_frame"            value="base_link" />
        <arg name="depth_frame"           value="zed_depth_camera" />
        <arg name="odometry_frame"        value="odom" />
+       <!--param name="openni_depth_mode"        value="1" /-->
+
     </include>
 </launch>

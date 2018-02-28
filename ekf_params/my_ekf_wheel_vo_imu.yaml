@@ -1,7 +1,7 @@
 # For parameter descriptions, please refer to the template parameter files for each node.
 
 ekf_se_odom:
-  frequency: 30
+  frequency: 50
   sensor_timeout: 0.1
   two_d_mode: true
   transform_time_offset: 0.0
@@ -44,7 +44,7 @@ ekf_se_odom:
 
 
 
-  imu0: mavros/imu/data
+  imu0: imu/data
   imu0_config: [false, false, false,   #  x, y, z,
                 true,  true,  true,    #  roll, pitch, yaw,
                 false, false, false,   #  vx, vy, vz,
@@ -119,7 +119,7 @@ ekf_se_map:
                  false, false, false]  #  ax, ay, az
 
   odom0_nodelay: true
-  odom0_differential: true
+  odom0_differential: false
   odom0_relative: false
   #   ======== ADVANCED PARAMETERS ======== 
   odom0_queue_size: 10
@@ -133,7 +133,7 @@ ekf_se_map:
                  false, false, false]  #  ax, ay, az
 
   odom1_nodelay: true
-  odom1_differential: true
+  odom1_differential: false
   odom1_relative: false
   #   ======== ADVANCED PARAMETERS ======== 
   odom1_queue_size: 10
@@ -141,19 +141,19 @@ ekf_se_map:
 
 
 
-  odom1: odometry/gps
-  odom1_config: [true,  true,  false,   #  x, y, z
+  odom2: odometry/gps
+  odom2_config: [true,  true,  false,   #  x, y, z
                  true, true, true,      #  roll, pitch, yaw,
                  false, false, false,   #  vx, vy, vz,
                  false, false, false,   #  vroll, vpitch, vyaw,
                  false, false, false]   #  ax, ay, az
-  odom1_queue_size: 10
-  odom1_nodelay: true
-  odom1_differential: true
-  odom1_relative: false
+  odom2_queue_size: 10
+  odom2_nodelay: true
+  odom2_differential: true
+  odom2_relative: false
 
 
-  imu0: mavros/imu/data
+  imu0: imu/data
   imu0_config: [false, false, false,   #  x, y, z,
                 true,  true,  true,    #  roll, pitch, yaw,
                 false, false, false,   #  vx, vy, vz,
@@ -161,7 +161,7 @@ ekf_se_map:
                 false,  false,  false] #  ax, ay, az
 
   imu0_nodelay: false
-  imu0_differential: false
+  imu0_differential: true
   imu0_relative: false
   #   ======== ADVANCED PARAMETERS ======== 
   imu0_queue_size: 50
