@@ -4,12 +4,12 @@ port: /dev/razor_imu_9dof
 
 ##### Calibration ####
 ### accelerometer
-accel_x_min: -250.0
-accel_x_max: 250.0
-accel_y_min: -250.0
-accel_y_max: 250.0
-accel_z_min: -250.0
-accel_z_max: 250.0
+accel_x_min: -259.77
+accel_x_max: 257.45
+accel_y_min: -255.00
+accel_y_max: 267.70
+accel_z_min: -268.55
+accel_z_max: 279.30
 
 ### magnetometer
 # standard calibration
@@ -22,8 +22,8 @@ magn_z_max: 600.0
 
 # extended calibration
 calibration_magn_use_extended: true
-magn_ellipsoid_center: [513.782, 269.968, 161.067]
-magn_ellipsoid_transform: [[0.997789, 0.0123592, 0.00370180], [0.0123592, 0.925678, -0.00211151], [0.00370180, -0.00211151, 0.927815]]
+magn_ellipsoid_center: [570.751, 278.003, 156.310]
+magn_ellipsoid_transform: [[0.967684, 0.0441991, 0.0313639], [0.0441991, 0.928600, -0.0121216], [0.0313639, -0.0121216, 0.883063]]
 
 # AHRS to robot calibration
 imu_yaw_calibration: 0.0

@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
 <launch>
-  <!--arg name="razor_config_file" default="$(find robot_sensors)/config/razor_imu/my_razor_SEN_14001.yaml"/-->
-  <arg name="razor_config_file" default="$(find robot_sensors)/config/razor_imu/my_razor_SEN_10736.yaml"/>
-    <!--node pkg="tf2_ros" type="static_transform_publisher" name="bl_imu" args="0 0 0 0 0 0 base_link base_imu_link" /-->
 
+  <arg name="razor_SEN"        default="10736"/>
+  <arg name="razor_SEN"        default="14001"/>   
+  <arg name="razor_config_file" default="$(find robot_sensors)/config/razor_imu/my_razor_SEN_$(arg razor_SEN).yaml"/>
+  <!--arg name="razor_config_file" default="$(find robot_sensors)/config/razor_imu/my_razor_SEN_14001.yaml"/-->
+    <!--node pkg="tf2_ros" type="static_transform_publisher" name="bl_imu" args="0 0 0 0 0 0 base_link base_imu_link" /-->
 
   <node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" output="screen">
       <remap from="/imu" to="/imu/data"/>
