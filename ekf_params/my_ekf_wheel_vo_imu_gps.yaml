@@ -44,12 +44,12 @@ ekf_se_odom:
 
 
 
-  imu0: mavros/imu/data
+  imu0: imu/data
   imu0_config: [false, false, false,   #  x, y, z,
                 true,  true,  true,    #  roll, pitch, yaw,
                 false, false, false,   #  vx, vy, vz,
                 true,  true,  true,    #  vroll, vpitch, vyaw,
-                false,  false,  false] #  ax, ay, az
+                true,  true,  true] #  ax, ay, az
 
   imu0_nodelay: false
   imu0_differential: true
@@ -153,12 +153,12 @@ ekf_se_map:
   odom1_relative: false
 
 
-  imu0: mavros/imu/data
+  imu0: imu/data
   imu0_config: [false, false, false,   #  x, y, z,
                 true,  true,  true,    #  roll, pitch, yaw,
                 false, false, false,   #  vx, vy, vz,
                 true,  true,  true,    #  vroll, vpitch, vyaw,
-                false,  false,  false] #  ax, ay, az
+                true,  true,  true] #  ax, ay, az
 
   imu0_nodelay: false
   imu0_differential: false

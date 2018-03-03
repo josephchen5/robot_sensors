@@ -11,7 +11,7 @@
 
                           <!-- SENSOR DEVICE -->
     <!-- IMU -->
-    <include file="$(find robot_sensors)/launch/imu/my_razor-pub.launch" />
+    <!--include file="$(find robot_sensors)/launch/imu/my_razor-pub.launch" /-->
     <!--include file="$(find robot_sensors)/launch/px4/my_px4.launch" /-->
 
     <!-- Arduino  wheel odometry  and motor drive -->
