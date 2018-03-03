@@ -5,30 +5,30 @@ port: /dev/razor_imu_10736
 ##### Calibration ####
 ### accelerometer
 accel_x_min: -275.00
-accel_x_max: 264.00
-accel_y_min: -258.00
-accel_y_max: 281.00
-accel_z_min: -315.00
-accel_z_max: 234.00
+accel_x_max: 286.00
+accel_y_min: -272.00
+accel_y_max: 292.00
+accel_z_min: -327.00
+accel_z_max: 236.00
 
 ### magnetometer
 # standard calibration
-magn_x_min: -453.00
-magn_x_max: 589.00
-magn_y_min: -530.00
-magn_y_max: 562.00
-magn_z_min: -491.00
-magn_z_max: 504.00
+magn_x_min: -600.0
+magn_x_max: 600.0
+magn_y_min: -600.0
+magn_y_max: 600.0
+magn_z_min: -600.0
+magn_z_max: 600.0
 
 # extended calibration
 calibration_magn_use_extended: true
-magn_ellipsoid_center: [93.7352, 19.6168, -8.21720]
-magn_ellipsoid_transform: [[0.913161, 0.0116277, 0.00383255], [0.0116277, 0.924952, 0.0218212], [0.00383255, 0.0218212, 0.993043]]
+magn_ellipsoid_center: [75.4759, 12.5168, -3.11390]
+magn_ellipsoid_transform: [[0.908851, 0.0169568, 0.00644599], [0.0169568, 0.939417, 0.0213383], [0.00644599, 0.0213383, 0.990699]]
 
 # AHRS to robot calibration
 imu_yaw_calibration: 0.0
 
 ### gyroscope
-gyro_average_offset_x: 42.65
-gyro_average_offset_y: 59.44
-gyro_average_offset_z: -4.43
+gyro_average_offset_x: 41.64
+gyro_average_offset_y: 59.69
+gyro_average_offset_z: -4.69
