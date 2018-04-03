@@ -3,8 +3,6 @@ global_costmap:
 #    robot_radius: 0.1
 
 
-   footprint_padding: 0.01
-
    track_unknown_space: true
 
    global_frame: /map
