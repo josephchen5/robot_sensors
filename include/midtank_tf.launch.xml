@@ -7,7 +7,7 @@
 <node pkg="tf2_ros" type="static_transform_publisher" name="base_link2gps" args=" -0.1 -0.03 0.0 0 0 0 base_link gps" /-->
 <!--node pkg="tf2_ros" type="static_transform_publisher" name="base_link2ZED" args=" 0.09 0.0 0.0 0 0 0 base_link zed_center" /-->
 
-<node pkg="tf" type="static_transform_publisher" name="base_link2imu" args=" 0.0 0.0 0.25 0 0 0 /base_link /base_imu_link 100" />
+<node pkg="tf" type="static_transform_publisher" name="base_link2imu" args=" 0.0 0.0 0.268 0 0 0 /base_link /base_imu_link 100" />
 <node pkg="tf" type="static_transform_publisher" name="base_link2ZED" args=" 0.11 0.0 0.34 0 0.07 0 /base_link /zed_center 10" />
 <!--node pkg="tf" type="static_transform_publisher" name="base_link2laser" args="0.135 0.0 0.26 -$(arg pi) 0.0  0.0 /base_link /laser 40" /-->
 <node pkg="tf" type="static_transform_publisher" name="base_link2laser" args="0.132 0.0 0.21 0.0 0.0 0.0 /base_link /laser 40" />

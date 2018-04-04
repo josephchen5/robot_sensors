@@ -3,7 +3,7 @@
 ekf_se_odom:
   frequency: 30
   sensor_timeout: 0.1
-  two_d_mode: false
+  two_d_mode: true
   transform_time_offset: 0.0
   transform_timeout: 0.0
   print_diagnostics: true
@@ -49,7 +49,7 @@ ekf_se_odom:
                 true,  true,  true,    #  roll, pitch, yaw,
                 false, false, false,   #  vx, vy, vz,
                 true,  true,  true,    #  vroll, vpitch, vyaw,
-                true,  true,  true] #  ax, ay, az
+                false,  false,  false] #  ax, ay, az
 
   imu0_nodelay: false
   imu0_differential: true
