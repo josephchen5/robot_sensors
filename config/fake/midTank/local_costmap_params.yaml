@@ -3,18 +3,18 @@ local_costmap:
 #robot_radius: 0.1
 
 
-   global_frame: /odom
-#   global_frame: /map       #  rbx1 fake setting
+#   global_frame: /odom
+   global_frame: /map       #  rbx1 fake setting
    robot_base_frame: /base_link
 
    update_frequency: 4.0   #  rbx1 3
    publish_frequency: 2.0   #  rbx1 1
 
 
-   static_map: false
-   rolling_window: true
-#   static_map: true      #  rbx1 fake setting
-#   rolling_window: false   #  rbx1 fake setting
+#   static_map: false
+#   rolling_window: true
+   static_map: true      #  rbx1 fake setting
+   rolling_window: false   #  rbx1 fake setting
 
 
 

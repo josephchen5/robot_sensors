@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="use_dwa"  default="false" /> 
+  <!--arg name="use_dwa"  default="true" /--> 
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+        <!-- global planner -->
+        <!--param name="base_global_planner" value="global_planner/GlobalPlanner" /-->
+        <!--rosparam file="$(find robot_sensors)/config/midTank/global_planner_params.yaml" command="load" /-->
+
+        <!-- local planner --> 
+    <rosparam file="$(find robot_sensors)/config/midTank/base_local_planner_params.yaml" command="load" unless="$(arg use_dwa)" />
+  
+    <rosparam file="$(find robot_sensors)/config/midTank/dwa_local_planner_params.yaml" command="load" if="$(arg use_dwa)"/>
+        <!-- params for move_base -->
+        <param name="planner_frequency" value="0.0" />
+        <param name="controller_frequency" value="10.0" />
+        <param name="controller_patience" value="3.0" />
+        <param name="oscillation_timeout" value="10.0" />
+        <param name="oscillation_distance" value="0.05" />
+        <param name="clearing_rotation_allowed" value="false" />
+
+    <rosparam file="$(find robot_sensors)/config/midTank/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find robot_sensors)/config/midTank/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find robot_sensors)/config/midTank/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find robot_sensors)/config/midTank/global_costmap_params.yaml" command="load" />
+
+
+  </node>
+  
+</launch>
