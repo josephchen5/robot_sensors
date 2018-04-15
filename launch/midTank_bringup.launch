@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="ZED_publish_tf"            default="true" />
+  <arg name="ZED_publish_tf"            default="false" />
   <arg name="use_rviz"                  default="false" />
     <!--arg name="use_rviz" default="true" /-->
 
@@ -19,9 +19,9 @@
 
     <!-- ZED -->
 
-    <!--include file="$(find robot_sensors)/launch/ZED_cam/my_ZED_cam.launch" >
+    <include file="$(find robot_sensors)/launch/ZED_cam/my_ZED_cam.launch" >
        <arg name="ZED_publish_tf"            value="$(arg ZED_publish_tf)" />
-    </include-->
+    </include>
 
     <!-- ydlidar -->
     <include file="$(find robot_sensors)/launch/ydlidar/lidar.launch" />

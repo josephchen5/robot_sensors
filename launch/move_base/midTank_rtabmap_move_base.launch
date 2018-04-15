@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<!-- ROS navigation stack move_base -->
+
+      <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+        <!-- local planner --> 
+          <rosparam file="$(find robot_sensors)/config/midTank/rtabmap/base_local_planner_params.yaml" command="load"/>
+
+
+          <rosparam file="$(find robot_sensors)/config/midTank/rtabmap/costmap_common_params_2d.yaml" command="load" ns="global_costmap" />
+          <rosparam file="$(find robot_sensors)/config/midTank/rtabmap/costmap_common_params_2d.yaml" command="load" ns="local_costmap" />
+    	  <rosparam file="$(find robot_sensors)/config/midTank/rtabmap/local_costmap_params_2d.yaml" command="load" />
+    	  <rosparam file="$(find robot_sensors)/config/midTank/rtabmap/global_costmap_params.yaml" command="load" ns="global_costmap"  />
+
+    	  <!--rosparam file="$(find robot_sensors)/config/midTank/rtabmap/base_local_planner_params.yaml" command="load" /-->
+
+
+      </node>
+   		
+
+
+</launch>
+
