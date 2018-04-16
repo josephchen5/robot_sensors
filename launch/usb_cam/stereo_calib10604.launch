@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+<!--include file="$(find ps4eye)/launch/stereo_hight10604.launch" /-->
+<include file="$(find ps4eye)/launch/stereo_low10604.launch" />
+
+<node name="camera_calibrator" pkg="camera_calibration" type="cameracalibrator.py" args="--size 11x9 --square 0.0285 --no-service-check right:=/stereo/right/image_raw left:=/stereo/left/image_raw right_camera:=/stereo/right left_camera:=/stereo/left" />
+
+</launch>

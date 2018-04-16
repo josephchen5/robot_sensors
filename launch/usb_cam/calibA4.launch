@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+<node name="camera_calibrator" pkg="camera_calibration" type="cameracalibrator.py" args="--size 7x6 --square 0.0255 --no-service-check right:=/stereo/right/image_raw left:=/stereo/left/image_raw right_camera:=/stereo/right left_camera:=/stereo/left" />
+</launch>
