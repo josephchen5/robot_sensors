@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
-  <node pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(find fiducial_slam)/fiducials.rviz"/>
+  <node pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(find robot_sensors)/rviz/fiducials.rviz"/>
 </launch>
