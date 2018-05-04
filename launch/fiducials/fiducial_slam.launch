@@ -3,7 +3,8 @@
 -->
 <launch>
   <!--arg name="camera" default="/camera"/-->
-  <arg name="camera" default="/usb_cam"/>
+  <!--arg name="camera" default="/usb_cam"/-->
+  <arg name="camera" default="/bebop"/>
   <arg name="map_frame" default="map"/>
   <arg name="odom_frame" default="odom"/>
   <arg name="base_frame" default="base_link"/>
@@ -28,7 +29,7 @@
 
   </node>
 
-<node pkg="tf" type="static_transform_publisher" name="base_link2usb_cam" args=" 0.0 0.0 0.0 0.0 0.0 0.0 /base_link /usb_cam 10" />
-<node pkg="tf" type="static_transform_publisher" name="odom2base_link" args=" 0.0 0.0 0.0 0.0 0.0 0.0 /odom /base_link 10" />
+<!--node pkg="tf" type="static_transform_publisher" name="base_link2usb_cam" args=" 0.0 0.0 0.0 0.0 0.0 0.0 /base_link /usb_cam 10" /-->
+<!--node pkg="tf" type="static_transform_publisher" name="odom2base_link" args=" 0.0 0.0 0.0 0.0 0.0 0.0 /odom /base_link 10" /-->
 
 </launch>

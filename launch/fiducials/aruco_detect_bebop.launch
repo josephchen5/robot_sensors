@@ -1,10 +1,10 @@
 <!-- Run the aruco_detect node -->
 <launch>
   <!-- namespace for camera input -->
-  <!--arg name="camera" default="/camera"/-->
-  <arg name="camera" default="/usb_cam"/>
-  <!--arg name="image" default="image"/-->
-  <arg name="image" default="image_rect"/>
+  <arg name="camera" default="/bebop"/>
+  <!--arg name="camera" default="/usb_cam"/-->
+  <arg name="image" default="image_raw"/>
+  <!--arg name="image" default="image_rect"/-->
   <arg name="transport" default="compressed"/>
   <!--arg name="fiducial_len" default="0.14"/-->
   <arg name="fiducial_len" default="0.063"/>

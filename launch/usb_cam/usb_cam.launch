@@ -6,6 +6,14 @@
   <arg name="image_view"                  default="true"/> 
   <arg name="cam_name"                    default="usb_cam" />
 
+  <arg name="pi" value="3.1415926535897932" />
+  <arg name="pi/2" value="1.5707963267948966" />
+
+
+
+
+
+
 
   <arg name="camera_info_url_default" default="file://$(find robot_sensors)/config/camera_info/LogitechC170.yaml" />
 
@@ -24,9 +32,9 @@
     <param name="autosize" value="true" />
   </node>
 
-
+<!--   $(arg pi/2)   -->
   <node pkg="image_proc" type="image_proc" name="image_proc" ns="$(arg cam_name)" output="screen" />
-  <node pkg="tf" type="static_transform_publisher" name="base_link2usb_cam" args=" 0.2 0.0 0.15 0 0.0 0.0 /base_link /usb_cam 10" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link2usb_cam" args=" 0.2 0.0 0.15 -$(arg pi/2) 0.0 -$(arg pi/2) /base_link /usb_cam 10" />
 
 </launch>
 
