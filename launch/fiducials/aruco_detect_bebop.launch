@@ -7,7 +7,7 @@
   <!--arg name="image" default="image_rect"/-->
   <arg name="transport" default="compressed"/>
   <!--arg name="fiducial_len" default="0.14"/-->
-  <arg name="fiducial_len" default="0.063"/>
+  <arg name="fiducial_len" default="0.09"/>
   <arg name="dictionary" default="6"/>
   <arg name="do_pose_estimation" default="true"/>
   <!--arg name="do_pose_estimation" default="false"/-->
@@ -26,9 +26,9 @@
   </node>
 
 
-  <node name="fiducial_image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+  <!--node name="fiducial_image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
     <remap from="image" to="/fiducial_images"/>
     <param name="autosize" value="true" />
-  </node>
+  </node-->
 
 </launch>
