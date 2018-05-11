@@ -27,7 +27,7 @@ TrajectoryPlannerROS:
    sim_time: 3.0                  #  different
    sim_granularity: 0.05          #  different
 
-   yaw_goal_tolerance: 0.1 # about 6 degrees   # different
+   yaw_goal_tolerance: 3.14 # about 6 degrees   # different
    xy_goal_tolerance: 0.05  # 5 cm            #  different
    latch_xy_goal_tolerance: false              #  different
    prune_plan: true                             #  different
