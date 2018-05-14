@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <launch>
+    <!-- roslaunch robot_sensors midTank_bringup.launch  -->
+
   <arg name="ZED_publish_tf"            default="false" />
   <arg name="use_rviz"                  default="false" />
     <!--arg name="use_rviz" default="true" /-->
@@ -13,18 +15,23 @@
     <!-- IMU -->
     <!--include file="$(find robot_sensors)/launch/imu/my_razor-pub.launch" /-->
     <!--include file="$(find robot_sensors)/launch/px4/my_px4.launch" /-->
+    <include file="$(find bno055_usb_stick)/launch/bno055_usb_stick.launch" />
+
 
     <!-- Arduino  wheel odometry  and motor drive -->
     <include file="$(find robot_sensors)/launch/base_link/my_midTank_arduino_NO_tf.launch" />
 
     <!-- ZED -->
 
-    <include file="$(find robot_sensors)/launch/ZED_cam/my_ZED_cam.launch" >
+    <!--include file="$(find robot_sensors)/launch/ZED_cam/my_ZED_cam.launch" >
        <arg name="ZED_publish_tf"            value="$(arg ZED_publish_tf)" />
-    </include>
+    </include-->
 
     <!-- ydlidar -->
     <include file="$(find robot_sensors)/launch/ydlidar/lidar.launch" />
+
+
+
 
     <!-- GPS -->
     <!--include file="$(find robot_sensors)/launch/ublox_gps/ublox_device_rover.launch" /-->

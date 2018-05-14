@@ -22,7 +22,7 @@
         <param name="linearUpdate" value="0.10"/>  <!-- rbx1 value="0.5"/ 处理所需的最小移动距离   -->   
         <param name="angularUpdate" value="0.2"/>  <!-- rbx1 value="0.436"/  处理所需的最小旋转角度    -->
         <param name="temporalUpdate" value="-0.1"/> <!-- rbx1 value="-1.0"/ 如果从最后一次扫描时刻开始超过了此更新时间,则执行扫描。如果这个值小于 0 ,则不使用它 -->
-        <param name="delta" value="0.05"/>   <!-- 地图分辨率:距离/像素 -->
+        <param name="delta" value="0.01"/>   <!-- 地图分辨率:距离/像素 -->
         <param name="lskip" value="0"/>     <!-- 在每次扫描中跳过的光束数量 -->
         <param name="particles" value="80"/> <!-- rbx1  value="80"/ 粒子滤波器中的粒子数-->
         <param name="sigma" value="0.05"/>    <!-- 激光辅助搜索的标准偏差 -->
