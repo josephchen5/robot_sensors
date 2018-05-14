@@ -4,6 +4,9 @@
 
   <arg name="ZED_publish_tf"            default="false" />
   <arg name="use_rviz"                  default="false" />
+  <arg name="Fusing_GPS_Data"       default="false"/>
+
+
     <!--arg name="use_rviz" default="true" /-->
 
 
@@ -23,9 +26,9 @@
 
     <!-- ZED -->
 
-    <!--include file="$(find robot_sensors)/launch/ZED_cam/my_ZED_cam.launch" >
+    <include file="$(find robot_sensors)/launch/ZED_cam/my_ZED_cam.launch" >
        <arg name="ZED_publish_tf"            value="$(arg ZED_publish_tf)" />
-    </include-->
+    </include>
 
     <!-- ydlidar -->
     <include file="$(find robot_sensors)/launch/ydlidar/lidar.launch" />
@@ -38,10 +41,9 @@
 
 
     <!-- EKF -->
-    <!--include file="$(find robot_sensors)/launch/ekf/my_ekf_wheel_imu.launch" /-->
-
-
-
+    <include file="$(find robot_sensors)/launch/ekf/my_ekf.launch" >
+        <arg name="Fusing_GPS_Data"        value="$(arg Fusing_GPS_Data)" />
+    </include>
 
     <!-- Rviz -->
     <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_sensors)/rviz/odom.rviz" if="$(arg use_rviz)" />
