@@ -1,3 +1,4 @@
+# https://github.com/turtlebot/turtlebot/blob/kinetic/turtlebot_bringup/param/defaults/smoother.yaml
 # Default parameters used by the yocs_velocity_smoother module.
 # This isn't used by minimal.launch per se, rather by everything
 # which runs on top.
