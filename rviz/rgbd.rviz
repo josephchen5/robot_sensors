@@ -5,8 +5,9 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /TF1/Frames1
         - /GPSOdometry1/Shape1
-        - /Map2
+        - /cloud_obstacles1
       Splitter Ratio: 0.553459108
     Tree Height: 426
   - Class: rviz/Selection
@@ -83,8 +84,8 @@ Visualization Manager:
           Value: true
         gps:
           Value: false
-        laser:
-          Value: false
+        laser_link:
+          Value: true
         map:
           Value: true
         odom:
@@ -111,7 +112,7 @@ Visualization Manager:
               {}
             gps:
               {}
-            laser:
+            laser_link:
               {}
             zed_center:
               zed_left_camera:
@@ -182,7 +183,7 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: Map
-      Topic: /rtabmap/grid_map
+      Topic: /rtabmap/proj_map
       Unreliable: false
       Use Timestamp: false
       Value: true
@@ -377,7 +378,7 @@ Visualization Manager:
       Color: 85; 255; 127
       Color Transformer: FlatColor
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 4096
@@ -388,13 +389,13 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.00999999978
+      Size (m): 0.0299999993
       Style: Flat Squares
       Topic: /rtabmap/cloud_ground
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -407,7 +408,7 @@ Visualization Manager:
       Color: 255; 0; 0
       Color Transformer: FlatColor
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 4096
@@ -418,13 +419,13 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.00999999978
+      Size (m): 0.0199999996
       Style: Flat Squares
       Topic: /rtabmap/cloud_obstacles
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -486,7 +487,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rtabmap_ros/OrbitOriented
-      Distance: 6.50048828
+      Distance: 5.09370947
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -501,10 +502,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.979795992
+      Pitch: 0.88479656
       Target Frame: base_link
       Value: OrbitOriented (rtabmap_ros)
-      Yaw: 2.53099418
+      Yaw: 2.35100651
     Saved: ~
 Window Geometry:
   Displays:
@@ -522,5 +523,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1704
-  X: 99
+  X: 331
   Y: 24
