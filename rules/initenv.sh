@@ -6,7 +6,7 @@ echo  'KERNEL=="ttyACM*", ATTRS{idVendor}=="26ac", ATTRS{idProduct}=="0011", MOD
 echo  'KERNEL=="ttyUSB*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", MODE:="0666", GROUP:="dialout",  SYMLINK+="nano"' >/etc/udev/rules.d/arduino_NANO.rules
 echo  'KERNEL=="ttyACM*", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", MODE:="0666", GROUP:="dialout",  SYMLINK+="uno"' >/etc/udev/rules.d/arduino_UNO.rules
 echo  'KERNEL=="ttyACM*", ATTRS{idVendor}=="152a", ATTRS{idProduct}=="80c1", MODE:="0666", GROUP:="dialout",  SYMLINK+="bno055_imu"' >/etc/udev/rules.d/Bosch_bno055_usb_stick.rules
-
+echo  'KERNEL=="input/js*", ATTRS{idVendor}=="045e", ATTRS{idProduct}=="028e", MODE:="0666", GROUP:="dialout",  SYMLINK+="x360_joystick"' >/etc/udev/rules.d/x360_joystick.rules
 
 
 sleep 2

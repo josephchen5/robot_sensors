@@ -201,7 +201,7 @@
 
       <param name="max_obstacles_height"       type="double" value="0.3"/>            <!-- 1070519 test  -->
 
-
+      <param name="RGBD/ScanMatchingSize" type="string" value="1"/>                 <!-- 1070519 test  -->
 
 
 
