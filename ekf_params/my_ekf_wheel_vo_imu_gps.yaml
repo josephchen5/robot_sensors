@@ -29,18 +29,18 @@ ekf_se_odom:
   odom0_queue_size: 10
 
 
-  odom1: camera/odom
-  odom1_config: [true, true, false,     #  x, y, z false, 
-                 true, true, true,     #  roll, pitch, yaw,
-                 true,  true,  true,   #  vx, vy, vz,
-                 false, false, false,  #  vroll, vpitch, vyaw,
-                  false, false, false]  #  ax, ay, az
+# odom1: camera/odom
+#  odom1_config: [true, true, false,     #  x, y, z false, 
+#                 true, true, true,     #  roll, pitch, yaw,
+#                 true,  true,  true,   #  vx, vy, vz,
+#                 false, false, false,  #  vroll, vpitch, vyaw,
+#                  false, false, false]  #  ax, ay, az
 
-  odom1_nodelay: true
-  odom1_differential: false
-  odom1_relative: false
+#  odom1_nodelay: true
+#  odom1_differential: false
+#  odom1_relative: false
   #   ======== ADVANCED PARAMETERS ======== 
-  odom1_queue_size: 10
+#  odom1_queue_size: 10
 
 
 
