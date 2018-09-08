@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <!--arg name="odom_topic"              default="wheel/odom"/-->         <!-- Odometry topic -->
+  <arg name="odom_topic"              default="odom"/>          <!-- Odometry topic -->
+
+   <node name="arduino" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
+      <!--rosparam file="$(find robot_sensors)/config/my_arduino_params_smallTank.yaml" command="load" /-->
+      <rosparam file="$(find robot_sensors)/config/TankTB400/chassis_params_TB400.yaml" command="load" />
+      <!--rosparam file="$(find robot_sensors)/config/my_arduino_params_bigTank.yaml" command="load" /-->
+
+      <remap from="odom"  to="$(arg odom_topic)"/>
+
+
+   </node>
+</launch>

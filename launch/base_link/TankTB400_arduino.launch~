@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="chassis_params_cfg"       default="$(find robot_sensors)/config/TankTB400/chassis_params_TB400.yaml" />
+  <arg name="publish_tf"               default="false"/>        
+  <arg name="odom_topic"               default="wheel/odom"/>         <!-- Odometry topic -->
+  <!--arg name="odom_topic"              default="odom"/-->          <!-- Odometry topic -->
+
+   <node if="$(arg publish_tf)" name="arduino" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
+      <rosparam   file="$(arg chassis_params_cfg)" command="load" />
+      <remap from="odom"  to="$(arg odom_topic)"/>
+   </node>
+
+   <node unless="$(arg publish_tf)" name="arduino" pkg="ros_arduino_python" type="arduino_node_NO_tf.py" output="screen">
+      <rosparam   file="$(arg chassis_params_cfg)" command="load" />
+      <remap from="odom"  to="$(arg odom_topic)"/>
+   </node>
+
+</launch>
