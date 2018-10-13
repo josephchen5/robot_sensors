@@ -5,7 +5,7 @@
   <arg name="pi" value="3.1415926535897932" />
   <arg name="pi/2" value="1.5707963267948966" />
 
-  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="-0.015 0.0 0.315 -$(arg pi) 0.0  0.0 /base_link /laser 40" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="-0.015 0.0 0.315 -$(arg pi) 0.0  0.0 /base_link /laser_link 40" />
 
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_sensors)/rviz/lidar.rviz" />
