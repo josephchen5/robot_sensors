@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- roslaunch robot_sensors midTank_bringup.launch  -->
+
+  <arg name="ZED_publish_tf"            default="false" />
+  <arg name="use_rviz"                  default="false" />
+  <arg name="Fusing_GPS_Data"          default="false"/>
+ 
+  <arg name="publish_wheel_odom_tf"    default="false"/>        
+
+    <!--arg name="use_rviz" default="true" /-->
+
+
+    <!-- TF setting -->
+
+    <include file="$(find robot_sensors)/launch/bringup/TankTB400/TankTB400_tf2.launch.xml" />
+
+
+
+
+                          <!-- SENSOR DEVICE -->
+    <!-- IMU -->
+
+    <!-- Arduino  wheel odometry  and motor drive -->
+    <include file="$(find robot_sensors)/launch/base_link/TankTB400_arduino.launch" >   
+	<arg name="publish_tf"          	value="$(arg publish_wheel_odom_tf)" />
+	</include>
+
+    <!-- ZED -->
+
+	<!--include file="$(find robot_sensors)/launch/ZED_cam/zed.launch">
+          <arg name="publish_tf"            value="true" />
+          <arg name="publish_map_tf"        value="false" />
+          <arg name="floor_alignment"        value="false" />
+	</include-->
+
+ 
+
+    <!-- ydlidar -->
+    <!--include file="$(find robot_sensors)/launch/ydlidar/lidar.launch" /-->
+
+
+
+
+    <!-- GPS -->
+    <!--include file="$(find robot_sensors)/launch/ublox_gps/ublox_device_rover.launch" /-->
+
+
+    <!-- EKF -->
+
+
+    <!-- Rviz -->
+    <node if="$(arg use_rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_sensors)/rviz/single_robot.rviz"  />
+
+</launch>
+

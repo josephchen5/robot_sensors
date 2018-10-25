@@ -21,10 +21,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <arg name="svo_file"                default="" /> <!-- <arg name="svo_file" default="path/to/svo/file.svo"> -->
 
   <!-- Launch ZED camera wrapper -->
-  <!--include file="$(find robot_sensors)/launch/ZED_cam/zed.launch"-->
+  <include file="$(find robot_sensors)/launch/ZED_cam/zed.launch">
       <!--arg name="camera_model" value="0" /--> <!-- 0=ZED, 1=ZEDM-->
       <!--arg name="svo_file"            value="$(arg svo_file)" /-->
-  <!--/include-->
+  </include>
 
   <!-- Launch rivz display -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_sensors)/rviz/zed.rviz" output="screen" />

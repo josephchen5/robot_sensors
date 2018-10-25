@@ -8,9 +8,11 @@
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="$(arg output)">
 
         <param name="odom_frame" value="odom"/>
-        <param name="base_frame" value="base_link"/>
+        <!--param name="base_frame" value="base_link"/-->
+        <param name="base_frame" value="zed_camera_center"/>
 
-        <remap from="scan" to="scan"/>
+
+        <remap from="scan" to="/scan"/>
 
         <!--param name="map_update_interval" value="3.0"/ 地图更新时间间隔( sec )  -->
         <param name="map_update_interval" value="2.0"/>

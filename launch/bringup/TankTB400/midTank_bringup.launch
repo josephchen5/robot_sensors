@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- roslaunch robot_sensors midTank_bringup.launch  -->
+
+  <arg name="ZED_publish_tf"            default="false" />
+  <arg name="use_rviz"                  default="false" />
+  <arg name="Fusing_GPS_Data"       default="false"/>
+
+
+    <!--arg name="use_rviz" default="true" /-->
+
+
+    <!-- TF setting -->
+    <include file="$(find robot_sensors)/include/midtank_tf.launch.xml" />
+    <!--include file="$(find robot_sensors)/include/midtank_tf2.launch.xml" /-->
+
+                          <!-- SENSOR DEVICE -->
+    <!-- IMU -->
+    <!--include file="$(find robot_sensors)/launch/imu/my_razor-pub.launch" /-->
+    <!--include file="$(find robot_sensors)/launch/px4/my_px4.launch" /-->
+    <include file="$(find bno055_usb_stick)/launch/bno055_usb_stick.launch" />
+
+
+    <!-- Arduino  wheel odometry  and motor drive -->
+    <include file="$(find robot_sensors)/launch/base_link/my_midTank_arduino_NO_tf.launch" />
+
+    <!-- ZED -->
+
+    <include file="$(find robot_sensors)/launch/ZED_cam/my_ZED_cam.launch" >
+       <arg name="ZED_publish_tf"            value="$(arg ZED_publish_tf)" />
+    </include>
+
+    <!-- ydlidar -->
+    <include file="$(find robot_sensors)/launch/ydlidar/lidar.launch" />
+
+
+
+
+    <!-- GPS -->
+    <!--include file="$(find robot_sensors)/launch/ublox_gps/ublox_device_rover.launch" /-->
+
+
+    <!-- EKF -->
+    <include file="$(find robot_sensors)/launch/ekf/my_ekf.launch" >
+        <arg name="Fusing_GPS_Data"        value="$(arg Fusing_GPS_Data)" />
+    </include>
+
+    <!-- Rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_sensors)/rviz/odom.rviz" if="$(arg use_rviz)" />
+
+</launch>
+

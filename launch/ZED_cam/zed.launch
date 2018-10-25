@@ -29,26 +29,26 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          RESOLUTION_HD720  -> 1280*720,  available framerates: 15, 30, 60 fps.
          RESOLUTION_VGA    -> 672*376,   available framerates: 15, 30, 60, 100 fps. -->
 
-    <arg name="rgb_topic"               	default="/rgb/image_rect_color" />
-    <arg name="depth_topic"             	default="/depth/depth_registered" />
-    <arg name="camera_info_topic"       	default="/rgb/camera_info" />
-    <arg name="depth_camera_info_topic" 	default="/depth/camera_info" />
-    <arg name="camera_frame"              default="zed_camera_center" />
+    <!-- ZED parameters -->
+
+    <!--arg name="rgb_topic"               	default="/rgb/image_rect_color" /-->
+    <!--arg name="depth_topic"             	default="/depth/depth_registered" /-->
+    <!--arg name="camera_info_topic"       	default="/rgb/camera_info" /-->
+    <!--arg name="depth_camera_info_topic" 	default="/depth/camera_info" /-->
+
+
+    <arg name="camera_frame"                    default="zed_camera_center" />
+    <!--arg name="camera_frame"                 default="base_link" /-->
 
     <!-- Coordinate frame -->
     <arg name="pose_frame"           default="map" />
     <arg name="odometry_frame"       default="odom" />
 
-    <arg name="publish_tf"                    default="true" />
+
+    <arg name="initial_pose"                  default="[0.0,0.0,0.0, 0.0,0.0,0.0]" /> <!-- X, Y, Z, (meter) R, P, Y, (radians)-->
+    <arg name="floor_alignment"               default="false" />
     <arg name="publish_map_tf"                default="true" />
-
-    <!--arg name="publish_tf"           default="false" /-->
-
-
-    <!-- ZED parameters -->
-
-    <arg name="floor_alignment"       default="false" />
-
+    <!--arg name="publish_map_tf"             default="false" /-->
 
     <group ns="zed">
     <!--group ns="camera"-->
@@ -62,17 +62,18 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <arg name="frame_rate"          default="$(arg frame_rate)" />
             <arg name="verbose"             default="$(arg verbose)" />
 
-	    <arg name="rgb_topic"             value="$(arg rgb_topic)" />
-	    <arg name="depth_topic"           value="$(arg depth_topic)" />
-	    <arg name="rgb_info_topic"       	value="$(arg camera_info_topic)" />
-	    <arg name="depth_cam_info_topic" 	value="$(arg depth_camera_info_topic)" />
+	    <!--arg name="rgb_topic"             value="$(arg rgb_topic)" /-->
+	    <!--arg name="depth_topic"           value="$(arg depth_topic)" /-->
+	    <!--arg name="rgb_info_topic"       	value="$(arg camera_info_topic)" /-->
+	    <!--arg name="depth_cam_info_topic" 	value="$(arg depth_camera_info_topic)" /-->
+
 	    <arg name="base_frame"            value="$(arg camera_frame)" />
 
 
+            <arg name="publish_map_tf"         value="$(arg publish_map_tf)" />
+            <arg name="floor_alignment"        value="$(arg floor_alignment)" />
+            <arg name="initial_pose"           value="$(arg initial_pose)" />
 
-            <arg name="publish_tf"            value="$(arg publish_tf)" />
-            <arg name="publish_map_tf"        value="$(arg publish_map_tf)" />
-           <arg name="floor_alignment"        value="$(arg floor_alignment)" />
 
 
         </include>
