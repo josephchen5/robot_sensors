@@ -13,12 +13,12 @@
   <arg name="Fusing_GPS_Data"           default="false"/>
 
 
-  <arg name="use_rlidar"                 default="true" />
+  <arg name="use_rlidar"                 default="false" />
 
-  <arg name="use_ZED"                    default="true" />
+  <arg name="use_ZED"                    default="false" />
   <arg name="ZED_publish_tf"            default="false" />
 
-  <arg name="publish_wheel_odom_tf"     default="false"/>        
+  <arg name="publish_wheel_odom_tf"     default="true"/>        
 
     <!--arg name="use_rviz" default="true" /-->
 
