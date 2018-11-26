@@ -2,11 +2,23 @@
 <launch>
     <!-- roslaunch robot_sensors midTank_bringup.launch  -->
 
+
+  <arg name="use_rviz"                  default="true" />
+  <!--arg name="rviz_cfg"                  default="$(find robot_sensors)/rviz/zed_rtabmap_rgbd.rviz" /-->
+  <!--arg name="rviz_cfg"                  default="$(find robot_sensors)/rviz/single_robot.rviz" /-->
+  <arg name="rviz_cfg"                  default="$(find robot_sensors)/rviz/zed_robot.rviz" />
+
+
+
+  <arg name="Fusing_GPS_Data"           default="false"/>
+
+
+  <arg name="use_rlidar"                 default="true" />
+
+  <arg name="use_ZED"                    default="true" />
   <arg name="ZED_publish_tf"            default="false" />
-  <arg name="use_rviz"                  default="false" />
-  <arg name="Fusing_GPS_Data"          default="false"/>
- 
-  <arg name="publish_wheel_odom_tf"    default="false"/>        
+
+  <arg name="publish_wheel_odom_tf"     default="false"/>        
 
     <!--arg name="use_rviz" default="true" /-->
 
@@ -28,16 +40,16 @@
 
     <!-- ZED -->
 
-	<!--include file="$(find robot_sensors)/launch/ZED_cam/zed.launch">
-          <arg name="publish_tf"            value="true" />
-          <arg name="publish_map_tf"        value="false" />
-          <arg name="floor_alignment"        value="false" />
-	</include-->
+  <include if="$(arg use_ZED)" file="$(find robot_sensors)/launch/ZED_cam/zed.launch">
+    <arg name="publish_map_tf"            value="false" />             <!-- 1071025  -->
+    <arg name="camera_frame"              value="base_link" />       <!-- 1071025  -->
+    <arg name="floor_alignment"           value="false" />             <!-- 1071025  -->
+    <arg name="initial_pose"              value="[0.11,0.06,0.3, 0.0,0.0,0.0]" /> <!-- X, Y, Z, (meter) R, P, Y, (radians)--> <!-- 1071025  -->
+  </include>
 
- 
 
     <!-- ydlidar -->
-    <!--include file="$(find robot_sensors)/launch/ydlidar/lidar.launch" /-->
+    <include if="$(arg use_rlidar)" file="$(find robot_sensors)/launch/ydlidar/lidar.launch" />
 
 
 
@@ -50,7 +62,8 @@
 
 
     <!-- Rviz -->
-    <node if="$(arg use_rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_sensors)/rviz/single_robot.rviz"  />
+    <node if="$(arg use_rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_cfg)" output="screen" />
+
 
 </launch>
 
