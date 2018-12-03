@@ -8,6 +8,7 @@ Panels:
         - /Video1/Camera view1
         - /Video1/Camera view1/Visibility1
         - /Depth1/DepthCloud1
+        - /LaserScan1
       Splitter Ratio: 0.409937888
     Tree Height: 355
   - Class: rviz/Selection
@@ -28,7 +29,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: Camera view
+    SyncSource: LaserScan
 Visualization Manager:
   Class: ""
   Displays:
@@ -53,39 +54,18 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        zed_camera_center:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        zed_left_camera_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        zed_left_camera_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        zed_right_camera_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        zed_right_camera_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Name: RobotModel
       Robot Description: zed/zed_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Class: rviz/TF
       Enabled: true
@@ -94,41 +74,27 @@ Visualization Manager:
         All Enabled: false
         base_link:
           Value: true
-        laser_link:
+        imu_link:
           Value: true
-        map:
+        laser_link:
           Value: true
         odom:
           Value: true
         zed_camera_center:
           Value: true
-        zed_left_camera_frame:
-          Value: false
-        zed_left_camera_optical_frame:
-          Value: false
-        zed_right_camera_frame:
-          Value: false
-        zed_right_camera_optical_frame:
-          Value: false
       Marker Scale: 0.5
       Name: TF
       Show Arrows: false
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          {}
         odom:
           base_link:
+            imu_link:
+              {}
             zed_camera_center:
               laser_link:
                 {}
-              zed_left_camera_frame:
-                zed_left_camera_optical_frame:
-                  {}
-              zed_right_camera_frame:
-                zed_right_camera_optical_frame:
-                  {}
       Update Interval: 0
       Value: true
     - Class: rviz/Group
@@ -424,7 +390,7 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.00999999978
+      Size (m): 0.00499999989
       Style: Flat Squares
       Topic: /scan
       Unreliable: false
@@ -445,7 +411,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: odom
     Frame Rate: 60
   Name: root
   Tools:
@@ -465,7 +431,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -2.41999912
+      Angle: -1.58499873
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
@@ -475,11 +441,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 211.092758
+      Scale: 479.095123
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: -0.126897812
-      Y: 0.281817824
+      X: 0.404954493
+      Y: -0.166972145
     Saved: ~
 Window Geometry:
   Camera view:

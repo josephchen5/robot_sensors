@@ -8,10 +8,10 @@ baud: 57600
 timeout: 0.1
 
 rate: 50
-sensorstate_rate: 20
+sensorstate_rate: 30
 
 use_base_controller: True
-base_controller_rate: 20
+base_controller_rate: 30
 
 # For a robot that uses base_footprint, change base_frame to base_footprint
 base_frame: base_link

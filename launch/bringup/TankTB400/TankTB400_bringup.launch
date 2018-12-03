@@ -10,16 +10,20 @@
 
 
 
-  <arg name="Fusing_GPS_Data"           default="false"/>
 
 
-  <arg name="use_rlidar"                 default="false" />
+  <arg name="use_rlidar"                 default="true" />
 
   <arg name="use_ZED"                    default="false" />
-  <arg name="ZED_publish_tf"            default="false" />
+  <arg name="ZED_publish_tf"             default="false" />
 
-  <arg name="publish_wheel_odom_tf"     default="true"/>        
+  <arg name="publish_wheel_odom_tf"        default="false"/>
 
+  <arg name="use_imu"                      default="true" />
+  <arg name="publish_imu_tf"               default="false"/>  
+
+  <arg name="use_ekf"                      default="true" />      
+  <arg name="Fusing_GPS_Data"              default="false"/>
     <!--arg name="use_rviz" default="true" /-->
 
 
@@ -32,6 +36,13 @@
 
                           <!-- SENSOR DEVICE -->
     <!-- IMU -->
+   
+    <!--include file="$(find robot_sensors)/launch/imu/my_razor-pub.launch" /-->
+    <!--include file="$(find robot_sensors)/launch/px4/my_px4.launch" /-->
+    <include if="$(arg use_imu)" file="$(find robot_sensors)/launch/bno055_usb_stick/bno055_usb_stick.launch" >
+             <arg name="publish_imu_tf"          value="$(arg publish_imu_tf)" /> 
+     </include>
+
 
     <!-- Arduino  wheel odometry  and motor drive -->
     <include file="$(find robot_sensors)/launch/base_link/TankTB400_arduino.launch" >   
@@ -58,7 +69,11 @@
     <!--include file="$(find robot_sensors)/launch/ublox_gps/ublox_device_rover.launch" /-->
 
 
+
     <!-- EKF -->
+    <include if="$(arg use_ekf)" file="$(find robot_sensors)/launch/ekf/my_ekf.launch" >
+        <arg name="Fusing_GPS_Data"        value="$(arg Fusing_GPS_Data)" />
+    </include>
 
 
     <!-- Rviz -->

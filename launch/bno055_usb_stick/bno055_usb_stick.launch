@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!--node pkg="tf2_ros" type="static_transform_publisher" name="bl_imu" args="0 0 0 0 0 0 base_link base_imu_link" /-->
+
+  <arg name="publish_imu_tf"               default="true"/> 
+  <!--arg name="publish_imu_tf"               default="false"/-->  
+    
+  <node pkg="bno055_usb_stick" type="bno055_usb_stick_node" name="bno055_usb_stick_node" output="screen">
+      <remap from="/imu" to="/imu/data"/>
+
+      <param name="publish_tf"                type="bool"     value="$(arg publish_imu_tf)" />
+
+      <param name="tf_frame_id"               type="string"   value="fixed"  />
+      <param name="frame_id"                  type="string"   value="imu_link"  />
+      <param name="tf_child_frame_id"         type="string"   value="imu_link"  />
+
+
+      <param name="port"        type="string"   value="/dev/bno055_imu" />
+      <param name="mode"        type="string"   value="ndof" />
+
+ <!--  nodf: estimate absolute orientation with an accelerometer, gyroscope, and magnetometer-->
+ <!--  imu: estimate relative orientation with an accelerometer and gyroscope-->
+
+  </node>
+
+  <!--node pkg="razor_imu_9dof" type="display_3D_visualization.py" name="display_3D_visualization_node" output="screen">
+  </node-->
+
+</launch>
+
