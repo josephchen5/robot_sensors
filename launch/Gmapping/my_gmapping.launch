@@ -17,7 +17,7 @@
         <param name="maxUrange"           value="8.0"/>   <!-- float default: 80.0 -->
         <param name="maxRange"            value="10.0"/>
         <param name="iterations"          value="5"/>    <!--   int 扫描匹配迭代次数 default: 5 -->
-        <param name="minimumScore"      value = "300.0"/> <!--  float 考虑到扫描匹配结果的最低分数  default: 0.0 -->
+        <param name="minimumScore"      value = "50.0"/> <!--  float 考虑到扫描匹配结果的最低分数  default: 0.0 -->
         <param name="srr" value="0.01"/>                   <!-- 测位误差(平移→移动) float, default: 0.1-->
         <param name="srt" value="0.2"/>                   <!-- 测位误差(平移→旋转) float, default: 0.2-->
         <param name="str" value="0.01"/>                   <!-- 测位误差(旋转→平移) float, default: 0.1-->

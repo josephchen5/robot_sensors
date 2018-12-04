@@ -20,10 +20,14 @@
   <arg name="publish_wheel_odom_tf"        default="false"/>
 
   <arg name="use_imu"                      default="true" />
-  <arg name="publish_imu_tf"               default="true"/>  
+  <arg name="publish_imu_tf"               default="false"/>  
 
-  <arg name="use_ekf"                      default="false" />      
+  <arg name="use_robot_localization"       default="false" />      
   <arg name="Fusing_GPS_Data"              default="false"/>
+
+  <arg name="use_robot_pose_ekf"       default="true" />      
+
+
     <!--arg name="use_rviz" default="true" /-->
 
 
@@ -71,8 +75,11 @@
 
 
     <!-- EKF -->
-    <include if="$(arg use_ekf)" file="$(find robot_sensors)/launch/ekf/my_ekf.launch" >
+    <include if="$(arg use_robot_localization)" file="$(find robot_sensors)/launch/ekf/my_ekf.launch" >
         <arg name="Fusing_GPS_Data"        value="$(arg Fusing_GPS_Data)" />
+    </include>
+
+    <include if="$(arg use_robot_pose_ekf)" file="$(find robot_sensors)/launch/robot_pose_ekf/robot_pose_ekf.launch" >
     </include>
 
 
