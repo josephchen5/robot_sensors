@@ -20,9 +20,9 @@
   <arg name="publish_wheel_odom_tf"        default="false"/>
 
   <arg name="use_imu"                      default="true" />
-  <arg name="publish_imu_tf"               default="false"/>  
+  <arg name="publish_imu_tf"               default="true"/>  
 
-  <arg name="use_ekf"                      default="true" />      
+  <arg name="use_ekf"                      default="false" />      
   <arg name="Fusing_GPS_Data"              default="false"/>
     <!--arg name="use_rviz" default="true" /-->
 

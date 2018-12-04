@@ -2,50 +2,37 @@
 
 <launch>
     <!-- Launch file parameters -->
-    <arg name="output"           default="screen" /> 
+
+    <arg name="scan_topic" default="scan" />
+    <arg name="output"  default="screen" />    <!-- option: "screen" or "log" --> 
 
     <!-- gmapping -->
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="$(arg output)">
 
-        <param name="odom_frame" value="odom"/>
-        <!--param name="base_frame" value="base_link"/-->
-        <param name="base_frame" value="zed_camera_center"/>
+        <param name="base_frame"  value="base_link"/>    <!-- default: "base_link" -->
+        <!--param name="base_frame" value="zed_camera_center"/-->
+        <param name="map_frame"   value="map"/>          <!-- default: "map" -->
+        <param name="odom_frame"  value="odom"/>         <!-- default: "odom" -->
+        <param name="map_update_interval" value="1.0"/>    <!-- float 地图更新时间间隔(sec) default: 5.0  -->
+        <param name="maxUrange"           value="8.0"/>   <!-- float default: 80.0 -->
+        <param name="maxRange"            value="10.0"/>
+        <param name="iterations"          value="5"/>    <!--   int 扫描匹配迭代次数 default: 5 -->
+        <param name="minimumScore"      value = "300.0"/> <!--  float 考虑到扫描匹配结果的最低分数  default: 0.0 -->
+        <param name="srr" value="0.01"/>                   <!-- 测位误差(平移→移动) float, default: 0.1-->
+        <param name="srt" value="0.2"/>                   <!-- 测位误差(平移→旋转) float, default: 0.2-->
+        <param name="str" value="0.01"/>                   <!-- 测位误差(旋转→平移) float, default: 0.1-->
+        <param name="stt" value="0.2"/>                   <!-- 测位误差(旋转→旋转) float, default: 0.2-->
+        <param name="linearUpdate" value="0.5"/>          <!-- 处理所需的最小移动距离 float, default: 1.0   -->   
+        <param name="angularUpdate" value="0.2"/>         <!--处理所需的最小旋转角度 float, default: 0.5   -->
+        <param name="temporalUpdate" value="-1.0"/>       <!--float, default: -1.0  -->
+        <param name="resampleThreshold" value="0.5"/>     <!-- float, default: 0.5-->
+        <param name="particles" value="50"/>               <!-- int, default: 30-->
+        <param name="xmin" value="-10.0"/>   <!--float, default: -100.0-->
+        <param name="ymin" value="-10.0"/>   <!--float, default: -100.0-->
+        <param name="xmax" value="10.0"/>    <!--float, default: 100.0-->
+        <param name="ymax" value="10.0"/>    <!--float, default: 100.0-->
+        <param name="delta" value="0.03"/>   <!-- 地图分辨率:距离/像素 float, default: 0.05-->
+        <remap from="scan" to="$(arg scan_topic)"/>
 
-
-        <remap from="scan" to="/scan"/>
-
-        <!--param name="map_update_interval" value="3.0"/ 地图更新时间间隔( sec )  -->
-        <param name="map_update_interval" value="2.0"/>
-
-        <!-- Set maxUrange < actual maximum range of the Laser -->
-        <param name="maxRange" value="16.0"/>
-        <param name="maxUrange" value="15.5"/>    <!-- 使用的激光传感器的最大范围( meter )  -->
-        <param name = "minimumScore" value = "100"/> <!-- 考虑到扫描匹配结果的最低分数  -->
-        <param name="linearUpdate" value="0.10"/>  <!-- rbx1 value="0.5"/ 处理所需的最小移动距离   -->   
-        <param name="angularUpdate" value="0.2"/>  <!-- rbx1 value="0.436"/  处理所需的最小旋转角度    -->
-        <param name="temporalUpdate" value="-0.1"/> <!-- rbx1 value="-1.0"/ 如果从最后一次扫描时刻开始超过了此更新时间,则执行扫描。如果这个值小于 0 ,则不使用它 -->
-        <param name="delta" value="0.01"/>   <!-- 地图分辨率:距离/像素 -->
-        <param name="lskip" value="0"/>     <!-- 在每次扫描中跳过的光束数量 -->
-        <param name="particles" value="80"/> <!-- rbx1  value="80"/ 粒子滤波器中的粒子数-->
-        <param name="sigma" value="0.05"/>    <!-- 激光辅助搜索的标准偏差 -->
-        <param name="kernelSize" value="1"/>  <!-- 激光辅助搜索的窗口大小-->
-        <param name="lstep" value="0.05"/>   <!--   初始搜索步骤(平移)-->
-        <param name="astep" value="0.05"/>   <!--   初始搜索步骤(旋转)-->
-        <param name="iterations" value="5"/>  <!--  扫描匹配迭代次数-->
-        <param name="lsigma" value="0.075"/>  <!--  光束似然估计的标准偏差-->
-        <param name="ogain" value="3.0"/>     <!--  似然估计扁平增益-->
-        <param name="srr" value="0.01"/>       <!-- rbx1  value="0.01"/ 测位误差(平移→移动)-->
-        <param name="srt" value="0.02"/>       <!-- rbx1  value="0.02"/测位误差(平移→旋转)-->
-        <param name="str" value="0.01"/>        <!-- rbx1  value="0.01"/测位误差(旋转→平移)-->
-        <param name="stt" value="0.02"/>      <!-- rbx1  value="0.02"/测位误差(旋转→旋转)-->
-        <param name="resampleThreshold" value="0.5"/>    <!-- rbx1  value="0.5"/重新采样阈值-->
-        <param name="xmin" value="-10.0"/>   <!--初始地图大小(最小 x )-->
-        <param name="ymin" value="-10.0"/>  <!-- 初始地图大小(最小 y )-->
-        <param name="xmax" value="10.0"/>   <!-- 初始地图大小(最大 x )-->
-        <param name="ymax" value="10.0"/>   <!--初始地图大小(最大 y )-->
-        <param name="llsamplerange" value="0.01"/>  <!-- 似然估计的范围(平移)-->
-        <param name="llsamplestep" value="0.01"/>   <!-- 似然估计的步幅(平移)-->
-        <param name="lasamplerange" value="0.005"/> <!-- 似然估计的范围(旋转)-->
-        <param name="lasamplestep" value="0.005"/>   <!-- 似然估计的步幅 ( 旋转 )-->
     </node>
 </launch>
