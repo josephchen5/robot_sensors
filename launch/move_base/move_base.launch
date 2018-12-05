@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<launch>
+<!--
+  Example move_base configuration. Descriptions of parameters, as well as a full list of all amcl parameters, can be found at http://www.ros.org/wiki/move_base.
+-->
+  <arg name="Robot_model"    default="TankTB400" /> <!-- option: "TankTB400"or"navigation_stage"or"fake"or"pi_robot"or"turtlebot" --> 
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base_node" clear_params="true" output="screen">
+
+
+
+    <param name="planner_frequency" value="1.0" /> <!-- double, default: 0.0 --> 
+<!--
+The rate in Hz at which to run the global planning loop. If the frequency is set to 0.0, the global planner will only run when a new goal is received or the local planner reports that its path is blocked. 
+-->
+    <param name="footprint_padding" value="0.01" />
+    <param name="controller_frequency" value="10.0" />
+    <param name="controller_patience" value="3.0" />
+
+    <param name="oscillation_timeout" value="30.0" />
+    <param name="oscillation_distance" value="0.5" />
+
+    <param name="base_global_planner" value="global_planner/GlobalPlanner" />
+    <rosparam file="$(find robot_sensors)/config/$(arg Robot_model)/move_base_config/global_planner_params.yaml" command="load" />
+
+    <!--
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+    -->
+
+    <rosparam file="$(find robot_sensors)/config/$(arg Robot_model)/move_base_config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find robot_sensors)/config/$(arg Robot_model)/move_base_config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find robot_sensors)/config/$(arg Robot_model)/move_base_config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find robot_sensors)/config/$(arg Robot_model)/move_base_config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find robot_sensors)/config/$(arg Robot_model)/move_base_config/base_local_planner_params.yaml" command="load" />
+
+    <!--
+    <rosparam file="$(find navigation_stage)/move_base_config/dwa_local_planner_params.yaml" command="load" />
+    -->
+  </node>
+</launch>
