@@ -3,7 +3,7 @@
 <!--
   Example move_base configuration. Descriptions of parameters, as well as a full list of all amcl parameters, can be found at http://www.ros.org/wiki/move_base.
 -->
-  <arg name="Robot_model"    default="TankTB400" /> <!-- option: "TankTB400"or"navigation_stage"or"fake"or"pi_robot"or"turtlebot" --> 
+  <arg name="Robot_model"    default="Tank_Black_Swan" /> <!-- option: "Tank_Black_Swan" "TankTB400"or"navigation_stage"or"fake"or"pi_robot"or"turtlebot" --> 
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base_node" clear_params="true" output="screen">
 

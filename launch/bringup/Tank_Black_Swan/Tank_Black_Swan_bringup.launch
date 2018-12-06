@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<launch>
+<!-- Tank_Black_Swan -->
+
+  <arg name="use_rviz"                  default="true" />
+  <!--arg name="rviz_cfg"                  default="$(find robot_sensors)/rviz/zed_rtabmap_rgbd.rviz" /-->
+  <!--arg name="rviz_cfg"                  default="$(find robot_sensors)/rviz/single_robot.rviz" /-->
+  <arg name="rviz_cfg"                  default="$(find robot_sensors)/rviz/zed_robot.rviz" />
+
+
+
+
+
+  <arg name="use_rlidar"                 default="true" />
+
+  <arg name="use_ZED"                    default="false" />
+  <arg name="ZED_publish_tf"             default="false" />
+
+  <arg name="publish_wheel_odom_tf"        default="false"/>
+
+  <arg name="use_imu"                      default="true" />
+  <arg name="publish_imu_tf"               default="false"/>  
+
+  <arg name="use_robot_localization"       default="false" />      
+  <arg name="Fusing_GPS_Data"              default="false"/>
+
+  <arg name="use_robot_pose_ekf"       default="true" />      
+
+
+    <!--arg name="use_rviz" default="true" /-->
+
+
+    <!-- TF setting -->
+
+    <include file="$(find robot_sensors)/launch/bringup/Tank_Black_Swan/Tank_Black_Swan_tf2.launch.xml" />
+
+                          <!-- SENSOR DEVICE -->
+    <!-- IMU -->
+   
+    <!--include file="$(find robot_sensors)/launch/imu/my_razor-pub.launch" /-->
+    <!--include file="$(find robot_sensors)/launch/px4/my_px4.launch" /-->
+    <include if="$(arg use_imu)" file="$(find robot_sensors)/launch/bno055_usb_stick/bno055_usb_stick.launch" >
+             <arg name="publish_imu_tf"          value="$(arg publish_imu_tf)" /> 
+     </include>
+
+
+    <!-- Arduino  wheel odometry  and motor drive -->
+    <include file="$(find robot_sensors)/launch/base_link/Tank_Black_Swan_arduino.launch" >   
+	<arg name="publish_tf"          	value="$(arg publish_wheel_odom_tf)" />
+	</include>
+
+    <!-- ZED -->
+
+  <include if="$(arg use_ZED)" file="$(find robot_sensors)/launch/ZED_cam/zed.launch">
+    <arg name="publish_map_tf"            value="false" />             <!-- 1071025  -->
+    <arg name="camera_frame"              value="base_link" />       <!-- 1071025  -->
+    <arg name="floor_alignment"           value="false" />             <!-- 1071025  -->
+    <arg name="initial_pose"              value="[0.11,0.06,0.3, 0.0,0.0,0.0]" /> <!-- X, Y, Z, (meter) R, P, Y, (radians)--> <!-- 1071025  -->
+  </include>
+
+
+    <!-- ydlidar -->
+    <include if="$(arg use_rlidar)" file="$(find robot_sensors)/launch/ydlidar/lidar.launch" />
+
+
+
+
+    <!-- GPS -->
+    <!--include file="$(find robot_sensors)/launch/ublox_gps/ublox_device_rover.launch" /-->
+
+
+
+    <!-- EKF -->
+    <include if="$(arg use_robot_localization)" file="$(find robot_sensors)/launch/ekf/my_ekf.launch" >
+        <arg name="Fusing_GPS_Data"        value="$(arg Fusing_GPS_Data)" />
+    </include>
+
+    <include if="$(arg use_robot_pose_ekf)" file="$(find robot_sensors)/launch/robot_pose_ekf/robot_pose_ekf.launch" >
+    </include>
+
+
+    <!-- Rviz -->
+    <node if="$(arg use_rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_cfg)" output="screen" />
+
+
+</launch>
+
