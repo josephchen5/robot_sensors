@@ -8,7 +8,7 @@ TrajectoryPlannerROS:
   acc_lim_y: 0.0  # default:2.5  zero for a differential drive robot
 
   #Set the velocity limits of the robot
-  max_vel_x: 0.15   #Tank_Black_Swan default 0.65
+  max_vel_x: 0.2   #Tank_Black_Swan default 0.65
   min_vel_x: 0.05  #TankTB400  default 0.1
   max_vel_y: 0.0   # zero for a differential drive robot default X
   min_vel_y: 0.0   # zdefault X

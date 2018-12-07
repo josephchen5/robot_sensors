@@ -60,9 +60,9 @@
 
 
     <!-- ydlidar -->
-    <include if="$(arg use_rlidar)" file="$(find robot_sensors)/launch/ydlidar/lidar.launch" />
+    <!--include if="$(arg use_rlidar)" file="$(find robot_sensors)/launch/ydlidar/lidar.launch" /-->
 
-
+    <include if="$(arg use_rlidar)" file="$(find robot_sensors)/launch/ydlidar/lidar_g4.launch" />
 
 
     <!-- GPS -->

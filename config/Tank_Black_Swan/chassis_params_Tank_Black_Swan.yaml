@@ -33,7 +33,7 @@ Ko: 50
 # Kd: 12
 # Ki: 0
 # Ko: 50
-accel_limit: 1.0
+accel_limit: 2.0
 
 #left_Kp: 100
 #left_Kd: 30
