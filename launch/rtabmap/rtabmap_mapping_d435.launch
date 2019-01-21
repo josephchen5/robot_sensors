@@ -51,7 +51,7 @@
   <arg     if="$(arg stereo)" name="approx_sync"  default="false"/>
   <arg unless="$(arg stereo)" name="approx_sync"  default="true"/>         
    
-  <!-- RGB-D related topics -->
+  <!-- D435 RGB-D related topics -->
   <arg name="rgb_topic"               default="/camera/color/image_raw" />                   <!--D435 -->
   <arg name="depth_topic"             default="/camera/aligned_depth_to_color/image_raw" />  <!--D435 -->
   <arg name="camera_info_topic"       default="/camera/color/camera_info" />                 <!--D435 -->
