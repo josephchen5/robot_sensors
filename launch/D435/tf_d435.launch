@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="camera_option"              default="false" />  <!-- option: "above"  true or "front" false --> 
+  <arg name="pi" value="3.1415926535897932" />
+  <arg name="pi/2" value="1.5707963267948966" />
+
+<!-- option: "above"  true or "front"      <origin xyz="0 0 0.0102" rpy="0 0 0" />
+--> 
+
+<node if="$(arg camera_option)" pkg="tf2_ros" type="static_transform_publisher" name="base_link2D435_link" args=" 0.0 0.0 1.30 0.0 -$(arg pi/2) 0.0 base_link D435_link " />
+
+
+<node unless="$(arg camera_option)" pkg="tf2_ros" type="static_transform_publisher" name="base_link2D435_link" args=" 0.3 0.0 1.30 0.0 0.0 0.0 base_link D435_link " />
+
+</launch>

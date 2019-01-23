@@ -1,14 +1,12 @@
 <?xml version="1.0"?>
 
 <launch>
-  <arg name="camera_option"              default="true" />  <!-- option: "above"  true or "front" false --> 
 
-  <arg name="pi" value="3.1415926535897932" />
-  <arg name="pi/2" value="1.5707963267948966" />
-
-  <arg name="serial_no"           default="819312071678"/> <!-- rtabmap -->
+  <!--arg name="serial_no"           default="819312071678"/--> <!-- rtabmap -->
+  <arg name="serial_no"           default=""/> <!-- rtabmap -->
   <arg name="json_file_path"      default=""/>
-  <arg name="camera"              default="camera"/>
+  <!--arg name="camera"              default="camera"/-->
+  <arg name="camera"              default="D435"/>
   <arg name="tf_prefix"           default="$(arg camera)"/>
 
   <arg name="fisheye_width"       default="640"/>
@@ -101,12 +99,6 @@
       <arg name="unite_imu_method"         value="$(arg unite_imu_method)"/>
     </include>
   </group>
-
-
-<node if="$(arg camera_option)" pkg="tf2_ros" type="static_transform_publisher" name="base_link2camera_link" args=" 0.0 0.0 1.30 0.0 -$(arg pi/2) 0.0 base_link camera_link " />
-
-
-<node unless="$(arg camera_option)" pkg="tf2_ros" type="static_transform_publisher" name="base_link2camera_link" args=" 0.0 0.0 1.30 0.0 0.0 0.0 base_link camera_link " />
 
 
 </launch>
