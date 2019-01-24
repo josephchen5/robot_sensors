@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="camera_info" value="/camera/depth/camera_info"/>
+  <arg name="depReg_imgrect" value="/camera/depth/image_rect_raw"/>  
+  <arg name="out_cloud" value="/points"/>
+
+  <node pkg="nodelet" type="nodelet" name="standalone_nodelet" args="manager" output="screen"/>
+
+  <!-- Construct point cloud of the rgb and depth topics -->
+  <node pkg="nodelet" type="nodelet" name="points_xyz" args="load depth_image_proc/point_cloud_xyz standalone_nodelet --no-bond">
+    <remap from="camera_info" to="$(arg camera_info)" />  
+    <remap from="image_rect" to="$(arg depReg_imgrect)"/>    
+    <remap from="points" to="$(arg out_cloud)"/>
+  </node>
+</launch>
