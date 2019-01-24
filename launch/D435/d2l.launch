@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="manager"             default="realsense2_camera_manager"/>
+
+  <arg name="camera"              default="D435"/>
+
+  <node pkg="nodelet" type="nodelet" name="realsense2_camera" args="load realsense2_camera/RealSenseNodeFactory $(arg camera)/$(arg manager)">
+  </node>
+
+
+</launch>
