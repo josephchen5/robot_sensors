@@ -32,7 +32,7 @@
   <arg name="localization"      default="false"/>
   <arg name="simulation"        default="false"/>
   <arg name="sw_registered"     default="false"/>
-  <arg     if="$(arg localization)" name="args"  default=""/>
+  <arg     if="$(arg localization)" name="args"  default="true"/>
   <arg unless="$(arg localization)" name="args"  default="--delete_db_on_start"/>
 
   <!-- D435 RGB-D related topics -->
@@ -44,7 +44,7 @@
   <arg unless="$(arg simulation)" name="depth_topic" default="/$(arg camera)/aligned_depth_to_color/image_raw"/>  <!--D435 -->
   <arg name="camera_info_topic" default="/$(arg camera)/color/camera_info"/>                                      <!--D435 -->
    
-  <arg name="subscribe_scan"          default="false"/>                                                            <!--false  D435 -->
+  <arg name="subscribe_scan"          default="true"/>                                                            <!--false  D435 -->
   <arg name="scan_topic"              default="/$(arg camera)/scan"/>                                              <!--D435 -->
 
 

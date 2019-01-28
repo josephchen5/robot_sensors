@@ -15,13 +15,15 @@
     <arg name="stacks" value="$(arg stacks)" />
     <arg name="3d_sensor" value="$(arg 3d_sensor)" />
   </include>
-  <!--include file="$(find turtlebot_bringup)/launch/includes/mobile_base.launch.xml">
+  <include file="$(find turtlebot_bringup)/launch/includes/mobile_base.launch.xml">
     <arg name="base" value="$(arg base)" />
     <arg name="serialport" value="$(arg serialport)" />
-  </include-->
-  <include file="$(find robot_sensors)/launch/Turtlebot/kobuki_minimal.launch">
-       <arg name="kobuki_publish_tf"  value="true"/>  <!-- false Publish base_footprint - odom transforms (usually good thing to have for localisation) -->
   </include>
+
+
+  <!--include file="$(find robot_sensors)/launch/Turtlebot/kobuki_minimal.launch">
+       <arg name="kobuki_publish_tf"  value="true"/> 
+  </include-->
 
 
 
