@@ -5,12 +5,15 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /TF1/Frames1
+        - /TF1/Frames1/base_link1/Position1
+        - /TF1/Frames1/base_link1/Orientation1
+        - /TF1/Frames1/base_link1/Relative Position1
+        - /TF1/Frames1/base_link1/Relative Orientation1
         - /Global Map1/Costmap1
         - /Global Map1/Planner1
         - /Local Map1/Costmap1
         - /Local Map1/Planner1
-      Splitter Ratio: 0.620214403
+      Splitter Ratio: 0.622754514
     Tree Height: 756
   - Class: rviz/Selection
     Name: Selection
@@ -72,30 +75,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        D435_aligned_depth_to_color_frame:
-          Value: false
-        D435_aligned_depth_to_infra1_frame:
-          Value: false
-        D435_aligned_depth_to_infra2_frame:
-          Value: false
-        D435_color_frame:
-          Value: false
-        D435_color_optical_frame:
-          Value: false
-        D435_depth_frame:
-          Value: true
-        D435_depth_optical_frame:
-          Value: false
-        D435_infra1_frame:
-          Value: false
-        D435_infra1_optical_frame:
-          Value: false
-        D435_infra2_frame:
-          Value: false
-        D435_infra2_optical_frame:
-          Value: false
-        D435_link:
-          Value: true
         base_footprint:
           Value: true
         base_link:
@@ -105,7 +84,7 @@ Visualization Manager:
         camera_depth_optical_frame:
           Value: false
         camera_link:
-          Value: true
+          Value: false
         camera_rgb_frame:
           Value: false
         camera_rgb_optical_frame:
@@ -122,12 +101,12 @@ Visualization Manager:
           Value: false
         gyro_link:
           Value: false
-        map:
+        laser_link:
           Value: true
         mount_asus_xtion_pro_link:
           Value: false
         odom:
-          Value: true
+          Value: false
         plate_bottom_link:
           Value: false
         plate_middle_link:
@@ -167,109 +146,91 @@ Visualization Manager:
         pole_top_3_link:
           Value: false
         wheel_left_link:
-          Value: true
+          Value: false
         wheel_right_link:
-          Value: true
+          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          odom:
-            base_footprint:
-              base_link:
-                D435_link:
-                  D435_aligned_depth_to_color_frame:
-                    D435_color_optical_frame:
-                      {}
-                  D435_aligned_depth_to_infra1_frame:
-                    D435_infra1_optical_frame:
-                      {}
-                  D435_aligned_depth_to_infra2_frame:
-                    D435_infra2_optical_frame:
-                      {}
-                  D435_color_frame:
+        odom:
+          base_footprint:
+            base_link:
+              camera_rgb_frame:
+                camera_depth_frame:
+                  camera_depth_optical_frame:
                     {}
-                  D435_depth_frame:
-                    D435_depth_optical_frame:
-                      {}
-                  D435_infra1_frame:
-                    {}
-                  D435_infra2_frame:
-                    {}
-                camera_rgb_frame:
-                  camera_depth_frame:
-                    camera_depth_optical_frame:
-                      {}
-                  camera_link:
-                    {}
-                  camera_rgb_optical_frame:
-                    {}
-                caster_back_link:
+                camera_link:
                   {}
-                caster_front_link:
+                camera_rgb_optical_frame:
                   {}
-                cliff_sensor_front_link:
-                  {}
-                cliff_sensor_left_link:
-                  {}
-                cliff_sensor_right_link:
-                  {}
-                gyro_link:
-                  {}
-                mount_asus_xtion_pro_link:
-                  {}
-                plate_bottom_link:
-                  {}
-                plate_middle_link:
-                  {}
-                plate_top_link:
-                  {}
-                pole_bottom_0_link:
-                  {}
-                pole_bottom_1_link:
-                  {}
-                pole_bottom_2_link:
-                  {}
-                pole_bottom_3_link:
-                  {}
-                pole_bottom_4_link:
-                  {}
-                pole_bottom_5_link:
-                  {}
-                pole_kinect_0_link:
-                  {}
-                pole_kinect_1_link:
-                  {}
-                pole_middle_0_link:
-                  {}
-                pole_middle_1_link:
-                  {}
-                pole_middle_2_link:
-                  {}
-                pole_middle_3_link:
-                  {}
-                pole_top_0_link:
-                  {}
-                pole_top_1_link:
-                  {}
-                pole_top_2_link:
-                  {}
-                pole_top_3_link:
-                  {}
-                wheel_left_link:
-                  {}
-                wheel_right_link:
-                  {}
+              caster_back_link:
+                {}
+              caster_front_link:
+                {}
+              cliff_sensor_front_link:
+                {}
+              cliff_sensor_left_link:
+                {}
+              cliff_sensor_right_link:
+                {}
+              gyro_link:
+                {}
+              laser_link:
+                {}
+              mount_asus_xtion_pro_link:
+                {}
+              plate_bottom_link:
+                {}
+              plate_middle_link:
+                {}
+              plate_top_link:
+                {}
+              pole_bottom_0_link:
+                {}
+              pole_bottom_1_link:
+                {}
+              pole_bottom_2_link:
+                {}
+              pole_bottom_3_link:
+                {}
+              pole_bottom_4_link:
+                {}
+              pole_bottom_5_link:
+                {}
+              pole_kinect_0_link:
+                {}
+              pole_kinect_1_link:
+                {}
+              pole_middle_0_link:
+                {}
+              pole_middle_1_link:
+                {}
+              pole_middle_2_link:
+                {}
+              pole_middle_3_link:
+                {}
+              pole_top_0_link:
+                {}
+              pole_top_1_link:
+                {}
+              pole_top_2_link:
+                {}
+              pole_top_3_link:
+                {}
+              wheel_left_link:
+                {}
+              wheel_right_link:
+                {}
       Update Interval: 0
       Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 0.344893157
-        Min Value: -4.49338961
+        Max Value: 4.69886875
+        Min Value: 0.259999961
         Value: true
       Axis: X
       Channel Name: intensity
@@ -290,7 +251,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.0199999996
       Style: Squares
-      Topic: /D435/scan
+      Topic: /scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -370,7 +331,7 @@ Visualization Manager:
           Topic: /move_base/TrajectoryPlannerROS/global_plan
           Unreliable: false
           Value: true
-      Enabled: true
+      Enabled: false
       Name: Global Map
     - Class: rviz/Group
       Displays:
@@ -442,7 +403,7 @@ Visualization Manager:
       Color Transformer: RGB8
       Download graph: false
       Download map: false
-      Enabled: true
+      Enabled: false
       Filter ceiling (m): 0
       Filter floor (m): 0
       Invert Rainbow: false
@@ -461,7 +422,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Class: rviz/Camera
       Enabled: false
       Image Rendering: background and overlay
@@ -473,6 +434,8 @@ Visualization Manager:
       Unreliable: false
       Value: false
       Visibility:
+        /D435/proj_obstacles: true
+        /obstacles_detection_points: true
         /rtabmap/cloud_ground: true
         /rtabmap/cloud_map: true
         /rtabmap/cloud_obstacles: true
@@ -485,14 +448,12 @@ Visualization Manager:
         Bumper Hit: true
         Camera: true
         Global Map:
-          Costmap: true
-          Planner: true
+          "": true
           Value: true
         Grid: true
         LaserScan: true
         Local Map:
-          Costmap: true
-          Planner: true
+          "": true
           Value: true
         Map: true
         RobotModel: true
@@ -512,6 +473,8 @@ Visualization Manager:
       Unreliable: false
       Value: false
       Visibility:
+        /D435/proj_obstacles: true
+        /obstacles_detection_points: true
         /rtabmap/cloud_ground: true
         /rtabmap/cloud_map: true
         /rtabmap/cloud_obstacles: true
@@ -524,14 +487,12 @@ Visualization Manager:
         Bumper Hit: true
         Camera: true
         Global Map:
-          Costmap: true
-          Planner: true
+          "": true
           Value: true
         Grid: true
         LaserScan: true
         Local Map:
-          Costmap: true
-          Planner: true
+          "": true
           Value: true
         Map: true
         RobotModel: true
@@ -540,7 +501,7 @@ Visualization Manager:
         Value: true
         depth_registered/points: true
       Zoom Factor: 1
-    - Alpha: 1
+    - Alpha: 0.200000003
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
         Max Value: 10
@@ -612,7 +573,7 @@ Visualization Manager:
       Color: 0; 255; 127
       Color Transformer: FlatColor
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 4096
@@ -629,7 +590,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -790,11 +751,71 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 0; 0
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: /obstacles_detection_points
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.0199999996
+      Style: Squares
+      Topic: /obstacles_detection_points
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 0; 0
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: /D435/proj_obstacles
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.0199999996
+      Style: Squares
+      Topic: /D435/proj_obstacles
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -811,25 +832,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 5.45262527
+      Distance: 4.564785
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.283044189
-        Y: 0.887202024
-        Z: 0.343371302
+        X: 0
+        Y: 0
+        Z: 0
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 1.56979632
+      Pitch: 0.509797215
       Target Frame: base_footprint
       Value: Orbit (rviz)
-      Yaw: 2.23538256
+      Yaw: 2.45539618
     Saved: ~
 Window Geometry:
   Camera:
@@ -849,5 +870,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1735
-  X: 153
-  Y: 46
+  X: 535
+  Y: 65

@@ -43,7 +43,7 @@ Processing enabled by this node:
   <arg name="camera"              default="D435"/>
 
   <!-- Processing Modules -->
-  <arg name="scan_processing"                 default="true"/>
+  <arg name="scan_processing"                 default="false"/>
 
 
   <arg name="tf_prefix"           default="$(arg camera)"/>
@@ -218,6 +218,23 @@ Processing enabled by this node:
     <!--param name="range_max" value="8.00"/-->
 
    </node>
+
+
+
+    <!-- Create obstacles_detection point cloud for the local planner -->
+  <!--
+
+     <node pkg="nodelet" type="nodelet" name="obstacles_detection" args="load rtabmap_ros/obstacles_detection $(arg manager)">
+         <remap from="cloud" to="/$(arg camera)/depth_registered/points"/>
+         <remap from="obstacles" to="/obstacles_detection_points"/>
+
+         <param name="frame_id" type="string" value="base_footprint"/>
+         <param name="map_frame_id" type="string" value="map"/>
+         <param name="min_cluster_size" type="int" value="20"/>
+         <param name="max_obstacles_height" type="double" value="0.0"/>
+      </node>
+-->
+
 
     <include file="$(find robot_sensors)/launch/D435/tf_d435.launch">
     </include>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="pi" value="3.1415926535897932" />
+  <arg name="pi/2" value="1.5707963267948966" />
+
+<node pkg="tf2_ros" type="static_transform_publisher" name="base_link2laser_link" args=" 0.26 0.0 0.24 0.0 0.0 0.0 base_link laser_link " />
+
+
+</launch>
