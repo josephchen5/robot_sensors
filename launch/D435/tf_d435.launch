@@ -11,6 +11,6 @@
 <node if="$(arg camera_option)" pkg="tf2_ros" type="static_transform_publisher" name="base_link2D435_link" args=" 0.0 0.0 1.30 0.0 -$(arg pi/2) 0.0 base_link D435_link " />
 
 
-<node unless="$(arg camera_option)" pkg="tf2_ros" type="static_transform_publisher" name="base_link2D435_link" args=" 0.0 0.0 0.65 0.0 0.0 0.0 base_link $(arg camera)_link " />
+<node unless="$(arg camera_option)" pkg="tf2_ros" type="static_transform_publisher" name="base_link2D435_link" args=" 0.3 0.0 0.9 0.0 0.0 0.0 base_link $(arg camera)_link " />
 
 </launch>

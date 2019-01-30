@@ -47,10 +47,10 @@
   <arg unless="$(arg simulation)" name="depth_topic" default="/$(arg camera)/aligned_depth_to_color/image_raw"/>  <!--D435 -->
   <arg name="camera_info_topic" default="/$(arg camera)/color/camera_info"/>                                      <!--D435 -->
    
-  <arg name="subscribe_scan"          default="true"/>                                                            <!--false  D435 -->
-  <!--arg name="scan_topic"              default="/$(arg camera)/scan"/-->                                              <!--D435 -->
-  <arg name="scan_topic"              default="/scan"/>                                              <!--D435 -->
-
+  <arg name="subscribe_scan"          default="false"/>                                                            <!--false  D435 -->
+  <arg name="scan_topic"              default="/$(arg camera)/scan"/>                                              <!--D435 -->
+  <!--arg name="scan_topic"              default="/scan"/-->                                                <!--D435 -->
+    
   <arg name="wait_for_transform"  default="0.2"/> 
   <!-- 
       robot_state_publisher's publishing frequency in "turtlebot_bringup/launch/includes/robot.launch.xml" 

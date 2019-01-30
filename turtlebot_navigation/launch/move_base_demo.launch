@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+
+  <!-- Move base -->
+
+<!--
+  <arg name="custom_param_file" default="$(find turtlebot_navigation)/param/$(arg 3d_sensor)_costmap_params.yaml"/>
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml">
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  </include>
+-->
+
+  <include file="$(find robot_sensors)/turtlebot_navigation/launch/includes/move_base.launch.xml">   <!-- robot_sensors-->
+  </include>
+
+</launch>
+
