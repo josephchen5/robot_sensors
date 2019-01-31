@@ -23,7 +23,9 @@
 -->
 
 
-  <arg name="map_file" default="$(find robot_sensors)/maps/office_map.yaml"/>
+  <!--arg name="map_file" default="$(find robot_sensors)/maps/office_map.yaml"/-->
+
+  <arg name="map_file" default="$(find robot_sensors)/maps/cc_space_map2.yaml"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
 
